@@ -1,72 +1,43 @@
-package chap04.Deque;
+package chap04.Queue;
 
 /**
  * Created by Sergei Doroshenko on 19.01.2015.
  */
-public class Deque {
+public class QueueO <T> {
     private int maxSize;
-    private long[] queArray;
+    private T[] queArray;
     private int front;
     private int rear;
     private int nItems;
     //--------------------------------------------------------------
-    public Deque(int s) {               // constructor
+    public QueueO(int s) {         // constructor
         maxSize = s;
-        queArray = new long[maxSize];
+        queArray = (T[]) new Object[maxSize];
         front = 0;
         rear = -1;
         nItems = 0;
     }
     //--------------------------------------------------------------
-
-    /**
-     * Insert item at the top end
-     * @param j long element that we insert into the deque
-     */
-    public void insertLeft(long j) {              // put item at rear of queue
+    public void insert(T j) {      // put item at rear of queue
         if (isFull()) throw new RuntimeException("Queue is full!");
 
-        if (front == 0) {             // when insert item push front pointer
-            front = maxSize - 1;      // from the right (maxSize - 1) to the left (0)
-        }
-
-        queArray[--front] = j;                 // decrement front and insert
-        nItems++;                            // one more item
-    }
-
-    public void insertRight(long j) {              // put item at rear of queue
-        if (isFull()) throw new RuntimeException("Deque is full!");
-
-        if (rear == maxSize-1) { rear = -1; }   // deal with wraparound
+        if(rear == maxSize-1) { rear = -1; }   // deal with wraparound
 
         queArray[++rear] = j;                 // increment rear and insert
         nItems++;                            // one more item
     }
     //--------------------------------------------------------------
-    public long removeLeft() {             // take item from front of queue
-        if (isEmpty()) throw new RuntimeException("Deque is empty.");
+    public T remove() {             // take item from front of queue
+        if (isEmpty()) throw new RuntimeException("Queue is empty.");
 
-        long temp = queArray[front++];        // get value and incr front
+        T temp = queArray[front++];        // get value and incr front
         if(front == maxSize) { front = 0; }   // deal with wraparound
         nItems--;                             // one less item
         return temp;
     }
-
-    public long removeRight() {             // take item from front of queue
-        if (isEmpty()) throw new RuntimeException("Queue is empty.");
-
-        long temp = queArray[rear--];          // get value and incr front
-        if(rear == -1) { rear = maxSize -1; }   // deal with wraparound
-        nItems--;                              // one less item
-        return temp;
-    }
     //--------------------------------------------------------------
-    public long peekFront() {          // peek at front of queue
+    public T peekFront() {          // peek at front of queue
         return queArray[front];
-    }
-
-    public long peekRear() {           // peek at rear of queue
-        return queArray[rear];
     }
     //--------------------------------------------------------------
     public boolean isEmpty() {         // true if queue is empty
@@ -83,13 +54,13 @@ public class Deque {
 
     @Override
     public String toString() {
-        String string = "Deque{";              // start string
+        String string = "-->{";              // start string
 
         int ind = front;                       // start from front index
         int itemsCount = 0;                    // output counter
 
-        while (itemsCount < nItems) {          // true, while all item doesn't print
-            string += queArray[ind];           // add item to result string
+        while (itemsCount < nItems) {              // true, while all item doesn't print
+            string += queArray[ind].toString();    // add item to result string
             if (itemsCount < nItems - 1)
                 string += ", ";                // add comma if item doesn't last one
             if (ind == maxSize -1) ind = -1;   // cyclic 'transfer'
@@ -99,5 +70,4 @@ public class Deque {
 
         return string += "}"; // add last item and return string  --> queArray[rear] +
     }
-
 }

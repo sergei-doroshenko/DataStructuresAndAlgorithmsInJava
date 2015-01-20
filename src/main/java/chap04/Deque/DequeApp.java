@@ -14,9 +14,11 @@ public class DequeApp {
         deque.insertRight(40);
         System.out.println(deque);
 
-        deque.remove();
-        deque.remove();
-        deque.remove();
+        System.out.println("Removed: " + deque.removeLeft());
+        System.out.println("Removed: " + deque.removeLeft());
+        System.out.println("Removed: " + deque.removeLeft());
+        System.out.println("Removed: " + deque.removeLeft());
+
         System.out.println(deque);
 
         deque.insertLeft(11);
@@ -24,5 +26,11 @@ public class DequeApp {
         deque.insertLeft(13);
         System.out.println(deque);
 
+        System.out.println("Removed: " + deque.removeRight());
+        //System.out.println("Removed: " + deque.removeRight());
+        System.out.println("Removed: " + deque.removeLeft());
+        System.out.println("Removed: " + deque.removeRight());
+        //System.out.println("Removed: " + deque.removeRight());
+        System.out.println(deque);
     }
 }

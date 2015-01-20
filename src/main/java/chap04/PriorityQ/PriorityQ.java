@@ -18,18 +18,18 @@ public class PriorityQ {
     public void insert(long item) {    // insert item
         int j;
 
-        if (nItems == 0) {                          // if no items,
-            queArray[nItems++] = item;              // insert at 0
-        } else {                                    // if items,
+        if (nItems == 0) {                            // if no items,
+            queArray[nItems++] = item;                // insert at 0
+        } else {                                      // if items,
 
             for(j = nItems-1; j >= 0; j--) {           // start at end,
-                if( item > queArray[j] ) {         // if new item larger,
-                    queArray[j + 1] = queArray[j]; // shift upward
-                } else {                           // if smaller,
-                    break;                         // done shifting
+                if( item > queArray[j] ) {             // if new item larger,
+                    queArray[j + 1] = queArray[j];     // shift upward
+                } else {                               // if smaller,
+                    break;                             // done shifting
                 }
             }  // end for
-            queArray[j + 1] = item;                // insert it
+            queArray[j + 1] = item;                    // insert it
             nItems++;
         }  // end else (nItems > 0)
     }  // end insert()
