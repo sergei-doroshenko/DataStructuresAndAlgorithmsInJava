@@ -1,4 +1,4 @@
-package chap05.linkList;
+package chap05.SingleLinked;
 
 import java.util.Iterator;
 
@@ -161,7 +161,7 @@ public class SinglyLlinkedList<T> implements Iterable<T> {
      * @return date of deleted elements
      * Time Complexity = O(N)
      */
-    public T delete(int key) {
+    public T delete(T key) {
         Link current = first;              // search for link
         Link previous = first;
 

@@ -37,6 +37,7 @@ public class SortedSinglyLlinkedList<T extends Comparable> implements Iterable<T
     // -------------------------------------------------------------
     /**
      * insert item in the list, Time Complexity - O(N)
+     * average is O(N/2)
      */
     public void insert(T key) {
         Link newLink = new Link(key, null); // make new link

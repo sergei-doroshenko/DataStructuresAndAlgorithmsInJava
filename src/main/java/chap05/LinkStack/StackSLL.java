@@ -1,6 +1,6 @@
 package chap05.LinkStack;
 
-import chap05.linkList.SinglyLlinkedList;
+import chap05.SingleLinked.SinglyLlinkedList;
 
 /**
  * Created by user on 21.01.2015.

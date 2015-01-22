@@ -8,9 +8,6 @@ public class Person {
     private String firstName;
     private int age;
 
-    public Person() {
-    }
-
     public Person(String lastName, String firstName, int age) {
         this.lastName = lastName;
         this.firstName = firstName;

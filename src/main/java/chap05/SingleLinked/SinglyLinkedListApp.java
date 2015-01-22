@@ -1,4 +1,6 @@
-package chap05.linkList;
+package chap05.SingleLinked;
+
+import java.util.Random;
 
 /**
  * Created by user on 21.01.2015.
@@ -50,6 +52,14 @@ public class SinglyLinkedListApp {
         LIST.displayList();
         System.out.println("Delete last: " + LIST.deleteLast());
         check();
+        int n = 0;
+        while (true) {
+            LIST.insertFirst(33);
+            n++;
+            if (n % 1000 == 0) {
+                System.out.println(n);
+            }
+        }
 
     }  // end main()
 

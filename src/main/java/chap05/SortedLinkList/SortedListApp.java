@@ -8,13 +8,10 @@ public class SortedListApp {
     {                            // create new list
         SortedSinglyLlinkedList<Integer> theSortedList = new SortedSinglyLlinkedList<>();
         theSortedList.insert(20);    // insert 2 items
-        //theSortedList.insert(40);
-
-        theSortedList.displayList(); // display list
-
+        theSortedList.insert(40);
         theSortedList.insert(10);    // insert 3 more items
-        theSortedList.insert(30);
         theSortedList.insert(50);
+        theSortedList.insert(30);
 
         theSortedList.displayList(); // display list
 
@@ -25,20 +22,8 @@ public class SortedListApp {
         theSortedList.insert(3);
         theSortedList.insert(150);
         theSortedList.displayList();
-        /*
-        theSortedList.deleteLast();
-        theSortedList.displayList();
 
-        theSortedList.deleteLast();
-        theSortedList.displayList();
-        theSortedList.deleteLast();
-        theSortedList.displayList();
-        theSortedList.deleteLast();
-        theSortedList.displayList();
-        theSortedList.deleteLast();
-        theSortedList.displayList();
-        */
-
+        /* Delete all items start --> end */
         while (!theSortedList.isEmpty()) {
             theSortedList.deleteLast();
             theSortedList.displayList();
@@ -53,6 +38,7 @@ public class SortedListApp {
         theSortedList.insert(90);
         theSortedList.displayList();
 
+        /* Delete all items start <-- end */
         while (!theSortedList.isEmpty()) {
             theSortedList.deleteFirst();
             theSortedList.displayList();
