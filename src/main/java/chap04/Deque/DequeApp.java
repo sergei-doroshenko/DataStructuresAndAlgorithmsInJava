@@ -5,7 +5,7 @@ package chap04.Deque;
  */
 public class DequeApp {
     public static void main (String[] args) {
-        Deque deque = new Deque(5);
+        DequeArr deque = new DequeArr(5);
         System.out.println(deque);
 
         deque.insertRight(10);

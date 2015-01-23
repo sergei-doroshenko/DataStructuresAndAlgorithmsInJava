@@ -3,14 +3,14 @@ package chap04.Deque;
 /**
  * Created by Sergei Doroshenko on 19.01.2015.
  */
-public class Deque {
+public class DequeArr {
     private int maxSize;
     private long[] queArray;
     private int front;
     private int rear;
     private int nItems;
     //--------------------------------------------------------------
-    public Deque(int s) {               // constructor
+    public DequeArr(int s) {               // constructor
         maxSize = s;
         queArray = new long[maxSize];
         front = 0;

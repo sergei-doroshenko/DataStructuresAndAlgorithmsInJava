@@ -13,13 +13,17 @@ import java.util.Iterator;
  * Indexing	Search	Insertion	Deletion
  *   O(n)	 O(n)	   O(1)	      O(1)
  */
-public class SinglyLlinkedList<T> implements Iterable<T> {
+public class SinglyLinkedList<T> implements Iterable<T> {
     private Link first;
     private Link last;
+    private int nItems;
+
     // -------------------------------------------------------------
-    public SinglyLlinkedList() {             // constructor
-        first = null;               // no links on list yet
-        last = null;
+    public SinglyLinkedList() {             // constructor
+        this.first = null;               // no links on list yet
+        this.last = null;
+        this.nItems = 0;
+
     }
 
     public T getFirst() {
@@ -50,6 +54,7 @@ public class SinglyLlinkedList<T> implements Iterable<T> {
         newLink.next = first;      // newLink --> old first
 
         first = newLink;           // first --> newLink
+        nItems++;
     }
 
     /**
@@ -66,6 +71,7 @@ public class SinglyLlinkedList<T> implements Iterable<T> {
         }
 
         last = newLink;           // last --> newLink
+        nItems++;
     }
 
     public void insertAfter(T elemAfter, T elem) {
@@ -82,6 +88,7 @@ public class SinglyLlinkedList<T> implements Iterable<T> {
             if (previous == last) {
                 last = previous.next;
             }
+            nItems++;
         }
     }
     // -------------------------------------------------------------
@@ -133,6 +140,7 @@ public class SinglyLlinkedList<T> implements Iterable<T> {
             last = null;
         }
         first = first.next;      // delete it: first-->old next
+        nItems--;
         return temp.element;     // return deleted link element
     }
 
@@ -152,6 +160,7 @@ public class SinglyLlinkedList<T> implements Iterable<T> {
         }
         previous.next = null;
         last = previous;
+        nItems--;
         return temp.element;
     }
 
@@ -179,7 +188,7 @@ public class SinglyLlinkedList<T> implements Iterable<T> {
         } else {                               // otherwise,
             previous.next = current.next;   //    bypass it
         }
-
+        nItems--;
         return current.element;
     }
 
@@ -197,6 +206,10 @@ public class SinglyLlinkedList<T> implements Iterable<T> {
 
     public void displayList() {
         System.out.println("List (first-->last): " + this.toString());
+    }
+
+    public int size() {
+        return nItems;
     }
 
     /**
@@ -225,23 +238,89 @@ public class SinglyLlinkedList<T> implements Iterable<T> {
      * Private iterator class
      */
     private class DirectIterator implements Iterator<T> {
-        Link current = first;
+        Link current = null;
+        Link previous = null;
 
         @Override
         public boolean hasNext() {
-            return current != null;
+            if (current == null) return first != null;
+            return current.next != null;
         }
 
         @Override
         public T next() {
-            T retVal = current.element;
-            current = current.next;
-            return retVal;
+            if (current == null) {
+                current = first;
+            } else {
+                previous = current;
+                current = current.next;
+            }
+            return current.element;
         }
 
         @Override
         public void remove() {
+            if(current == first) {                    // found it; first item?
+                first = current.next;                 // first --> old next
+            } else {                                  // not first
+                previous.next = current.next;         // old previous --> old next
+            }
 
+            if(current == last) {                     // last item?
+                last = previous;                      // old previous <-- last
+            }
+            nItems--;
+        }
+    }
+
+    public SLLIterator<T> sllIterator() { return new SLLIteratorImpl(); }
+
+    public interface SLLIterator<T> extends Iterator<T> {
+        void reset();                    // start at 'first'
+        boolean atEnd();                 // true if last link
+        void insertAfter(T element);     // insert after
+        void insertBefore(T element);    // insert before
+    }
+
+    private class SLLIteratorImpl extends DirectIterator implements SLLIterator<T> {
+
+        @Override
+        public void reset() {
+            current = null;
+            previous = null;
+        }
+
+        @Override
+        public boolean atEnd() {
+            return current.next == null;
+        }
+
+        @Override
+        public void insertAfter(T element) {
+            if (current == null) throw new IllegalStateException("Iterator hasn't been moved.");
+
+            Link newLink = new Link(element, current.next);
+            current.next = newLink;
+
+            if (current == last) {
+                last = newLink;
+            }
+            current = newLink;      // move iterator pointer to inserted item
+            nItems++;
+        }
+
+        @Override
+        public void insertBefore(T element) {
+            if (current == null) throw new IllegalStateException("Iterator hasn't been moved.");
+
+            Link newLink = new Link(element, current);
+
+            if (current == first) {
+                first = newLink;
+            } {
+                previous.next = newLink;
+            }
+            nItems++;
         }
     }
 

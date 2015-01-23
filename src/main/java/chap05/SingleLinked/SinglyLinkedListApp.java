@@ -1,12 +1,10 @@
 package chap05.SingleLinked;
 
-import java.util.Random;
-
 /**
  * Created by user on 21.01.2015.
  */
 public class SinglyLinkedListApp {
-    private static SinglyLlinkedList<Integer> LIST = new SinglyLlinkedList();  // make new list
+    private static SinglyLinkedList<Integer> LIST = new SinglyLinkedList();  // make new list
 
     public static void main(String[] args) {
 

@@ -1,19 +1,19 @@
 package chap04.Stack;
 
-import chap04.Deque.Deque;
+import chap04.Deque.DequeArr;
 
 /**
  * Created by user on 19.01.2015.
  */
 public class StackDequeLong {
 
-    private Deque deque;
+    private DequeArr deque;
 
     //--------------------------------------------------------------
     public StackDequeLong(int s) {       // constructor
 
 
-        deque = new Deque(s);  // create array
+        deque = new DequeArr(s);  // create array
 
     }
     //--------------------------------------------------------------

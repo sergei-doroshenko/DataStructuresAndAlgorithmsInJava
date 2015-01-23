@@ -9,7 +9,7 @@ public class ListInsertionSortApp {
         System.out.println("Before sorting:");
         displayArray(arr1);
 
-        SortedSinglyLlinkedList<Integer> list = new SortedSinglyLlinkedList<>();
+        SortedSinglyLinkedList<Integer> list = new SortedSinglyLinkedList<>();
         for (int i = 0; i < arr1.length; i++) {
             list.insert(arr1[i]);
         }

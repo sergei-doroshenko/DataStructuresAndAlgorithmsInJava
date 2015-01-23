@@ -13,13 +13,16 @@ import java.util.Iterator;
  * Indexing	Search	Insertion	Deletion
  *   O(n)	 O(n)	   O(1)	      O(1)
  */
-public class SortedSinglyLlinkedList<T extends Comparable> implements Iterable<T> {
+public class SortedSinglyLinkedList<T extends Comparable> implements Iterable<T> {
     private Link first;
     private Link last;
+    private int nItems;
+
     // -------------------------------------------------------------
-    public SortedSinglyLlinkedList() {             // constructor
+    public SortedSinglyLinkedList() {             // constructor
         first = null;               // no links on list yet
         last = null;
+        nItems = 0;
     }
 
     public T getFirst() {
@@ -63,26 +66,8 @@ public class SortedSinglyLlinkedList<T extends Comparable> implements Iterable<T
 
         newLink.next = current;           // newLink --> old currnt
 
-
+        nItems++;
     }
-
-    public void insertAfter(T elemAfter, T elem) {
-        Link previous = findLink(elemAfter);
-        if (previous != null) {
-            /*
-            Link previous = findLink(element);
-            Link next = previous.next;
-            Link current = new Link(element, next);
-            previous.next = current;
-            */
-            /* More short variant */
-            previous.next = new Link(elem, previous.next);
-            if (previous == last) {
-                last = previous.next;
-            }
-        }
-    }
-    // -------------------------------------------------------------
 
     /**
      * @param key - element
@@ -131,6 +116,7 @@ public class SortedSinglyLlinkedList<T extends Comparable> implements Iterable<T
             last = null;
         }
         first = first.next;      // delete it: first-->old next
+        nItems--;
         return temp.element;     // return deleted link element
     }
 
@@ -154,6 +140,7 @@ public class SortedSinglyLlinkedList<T extends Comparable> implements Iterable<T
         }
         previous.next = null;
         last = previous;
+        nItems--;
         return temp.element;
     }
 
@@ -181,7 +168,7 @@ public class SortedSinglyLlinkedList<T extends Comparable> implements Iterable<T
         } else {                               // otherwise,
             previous.next = current.next;   //    bypass it
         }
-
+        nItems--;
         return current.element;
     }
 
@@ -199,6 +186,10 @@ public class SortedSinglyLlinkedList<T extends Comparable> implements Iterable<T
 
     public void displayList() {
         System.out.println("Sorted List (first-->last): " + this.toString());
+    }
+
+    public int size() {
+        return nItems;
     }
 
     /**

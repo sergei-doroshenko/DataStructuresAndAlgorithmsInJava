@@ -1,15 +1,15 @@
 package chap05.LinkQueue;
 
-import chap05.SingleLinked.SinglyLlinkedList;
+import chap05.SingleLinked.SinglyLinkedList;
 
 /**
  * Created by user on 21.01.2015.
  */
 public class QueueSLL<T> {
-    SinglyLlinkedList<T> list;
+    SinglyLinkedList<T> list;
 
     public QueueSLL() {
-        list = new SinglyLlinkedList<>();
+        list = new SinglyLinkedList<>();
     }
 
     public boolean isEmpty() {

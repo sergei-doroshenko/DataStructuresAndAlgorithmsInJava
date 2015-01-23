@@ -6,7 +6,7 @@ package chap05.SortedLinkList;
 public class SortedListApp {
     public static void main(String[] args)
     {                            // create new list
-        SortedSinglyLlinkedList<Integer> theSortedList = new SortedSinglyLlinkedList<>();
+        SortedSinglyLinkedList<Integer> theSortedList = new SortedSinglyLinkedList<>();
         theSortedList.insert(20);    // insert 2 items
         theSortedList.insert(40);
         theSortedList.insert(10);    // insert 3 more items

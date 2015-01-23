@@ -1,6 +1,6 @@
 package chap04;
 
-import chap04.Deque.Deque;
+import chap04.Deque.DequeArr;
 import chap04.Stack.StackXInt;
 import junit.framework.TestCase;
 
@@ -10,7 +10,7 @@ import junit.framework.TestCase;
 public class DequeTest extends TestCase {
 
     public void testA() {
-        Deque deque = new Deque(3);
+        DequeArr deque = new DequeArr(3);
         deque.insertRight(1);
         deque.insertRight(2);
 

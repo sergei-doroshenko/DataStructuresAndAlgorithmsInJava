@@ -1,15 +1,15 @@
 package chap05.LinkStack;
 
-import chap05.SingleLinked.SinglyLlinkedList;
+import chap05.SingleLinked.SinglyLinkedList;
 
 /**
  * Created by user on 21.01.2015.
  */
 public class StackSLL<T> {
-    private SinglyLlinkedList<T> list;
+    private SinglyLinkedList<T> list;
 
     public StackSLL() {
-        list = new SinglyLlinkedList<>();
+        list = new SinglyLinkedList<>();
     }
 
     public void push(T item) {

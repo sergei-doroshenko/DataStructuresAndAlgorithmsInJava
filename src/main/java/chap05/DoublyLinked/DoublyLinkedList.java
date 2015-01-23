@@ -318,7 +318,7 @@ public class DoublyLinkedList<T> implements Iterable<T> {
 
         @Override
         public void insertAfter(T element) {
-            if (current == null) throw new IllegalStateException("Iterator doesn't moved.");
+            if (current == null) throw new IllegalStateException("Iterator hasn't been moved");
 
             Link currentNextLink = current.next;
             Link newLink = new Link(element, currentNextLink, current);
@@ -336,7 +336,7 @@ public class DoublyLinkedList<T> implements Iterable<T> {
 
         @Override
         public void insertBefore(T element) {
-            if (current == null) throw new IllegalStateException("Iterator doesn't moved.");
+            if (current == null) throw new IllegalStateException("Iterator hasn't been moved.");
 
             Link currentPreviousLink = current.previous;
             Link newLink = new Link(element, current, currentPreviousLink);
