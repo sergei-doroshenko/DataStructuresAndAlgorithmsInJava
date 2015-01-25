@@ -58,12 +58,12 @@ public class CycleDoublyLinkedList<T> implements Iterable<T> {
      * @return Link object
      * Time Complexity = O(N)
      */
-    private Link findLink(T key) {              // find link with given key
+    private Link findLink(T key) {              // findL link with given key
         Link temp = current;                    // save link to current at search start
 
         while(!temp.element.equals(key)) {      // while no match,
             if(temp.next == current) {          // if end of list,
-                return null;                    // didn't find it
+                return null;                    // didn't findL it
 
             } else {                            // not end of list,
                 temp = temp.next;                  // go to next link

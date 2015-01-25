@@ -16,7 +16,7 @@ public class HighArray {
 
     public int size() { return nElems; }
 
-    public boolean find(long searchKey) { // find specified value
+    public boolean find(long searchKey) { // findL specified value
         int j;
         for (j = 0; j < nElems; j++) {           // for each element,
             if (a[j] == searchKey) {         // found item?
@@ -25,11 +25,11 @@ public class HighArray {
         }
 
         if (j == nElems) {                    // gone to end?
-            return false;                   // yes, can't find it
+            return false;                   // yes, can't findL it
         } else {
             return true;                    // no, found it
         }
-    }  // end find()
+    }  // end findL()
     //-----------------------------------------------------------
     public void insert(long value) {    // put element into array
         a[nElems] = value;             // insert it
@@ -41,7 +41,7 @@ public class HighArray {
         for(j=0; j<nElems; j++)        // look for it
             if( value == a[j] )
                 break;
-        if(j==nElems)                  // can't find it
+        if(j==nElems)                  // can't findL it
             return false;
         else                           // found it
         {

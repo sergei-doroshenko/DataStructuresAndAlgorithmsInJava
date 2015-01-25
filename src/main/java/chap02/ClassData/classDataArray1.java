@@ -40,16 +40,16 @@ class ClassDataArray
       }
 //--------------------------------------------------------------
    public Person find(String searchName)
-      {                              // find specified value
+      {                              // findL specified value
       int j;
       for(j=0; j<nElems; j++)            // for each element,
          if( a[j].getLast().equals(searchName) )  // found item?
             break;                       // exit loop before end
       if(j == nElems)                    // gone to end?
-         return null;                    // yes, can't find it
+         return null;                    // yes, can't findL it
       else
          return a[j];                    // no, found it
-      }  // end find()
+      }  // end findL()
 //--------------------------------------------------------------                                    // put person into array
    public void insert(String last, String first, int age)
       {
@@ -63,7 +63,7 @@ class ClassDataArray
       for(j=0; j<nElems; j++)            // look for it
          if( a[j].getLast().equals(searchName) )
             break;
-      if(j==nElems)                      // can't find it
+      if(j==nElems)                      // can't findL it
          return false;
       else                               // found it
          {
@@ -112,7 +112,7 @@ class ClassDataApp
          found.displayPerson();
          }
       else
-         System.out.println("Can't find " + searchKey);
+         System.out.println("Can't findL " + searchKey);
 
       System.out.println("Deleting Smith, Yee, and Creswell");
       arr.delete("Smith");           // delete 3 items

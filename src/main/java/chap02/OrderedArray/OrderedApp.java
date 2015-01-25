@@ -47,17 +47,17 @@ public class OrderedApp {
         arr.insert(33);
         arr.display();                 // display items
 
-        int searchKey = 78;            // search for item
-        if( arr.find(searchKey) != arr.size() )
-            System.out.println("Found " + searchKey + " at position: " + arr.find(searchKey));
+        int searchKey = 22;            // search for item
+        if( arr.findL(searchKey) != arr.size() )
+            System.out.println("findL() " + searchKey + " at position: " + arr.findL(searchKey));
         else
-            System.out.println("Can't find " + searchKey);
+            System.out.println("Can't findL " + searchKey);
 
         OrderedArray searched = new OrderedArray(arr.size());
         for (long i = 0; i < 150; i++) {
-            int keyIndex = arr.find2(i);
+            int keyIndex = arr.findR(i);
             if (keyIndex != -1){
-                System.out.println("find2() index of " + i + " = " + keyIndex);
+                System.out.println("findR() index of " + i + " = " + keyIndex);
                 searched.insert(arr.get(keyIndex));
             }
         }

@@ -21,7 +21,7 @@ public class OrderedArray {
         return a[index];
     }
 
-    public int find(long searchKey) {
+    public int findL(long searchKey) {
         int lowerBound = 0;
         int upperBound = nElems-1;
 
@@ -38,34 +38,34 @@ public class OrderedArray {
                 upperBound = curIn - 1;  // it's in lower half
             }
         }  // end while
-        return nElems; // can't find it
+        return nElems; // can't findL it
 
     }  // end find()
     //-----------------------------------------------------------
 
-    public int find2(long key) {
-        return findR(key, 0, nElems);
+    public int findR(long key) {
+        return findRec(key, 0, nElems);
     }
 
-    private int findR(long key, int low, int high) { // Method implemented with recursive algorithm
+    private int findRec(long key, int low, int high) { // Method implemented with recursive algorithm
+        if (low > high) return -1; // can't findL it QUIT from recursion
 
-        if (low > high) return -1; // can't find it
         int mid = (low + high) / 2;
         long midVal = a[mid];
 
         if (midVal == key) {                   // found it
             return mid;
         } else if (midVal < key) {             // it's in upper half
-            return findR(key, mid + 1, high);
+            return findRec(key, mid + 1, high);
         } else {                               // it's in lower half
-            return findR(key, low, mid - 1);
+            return findRec(key, low, mid - 1);
         }
     }
 
     public void insert(long value) {   // put element into array
 
         int j;
-        for(j = 0; j < nElems; j++) {       // find where it goes
+        for(j = 0; j < nElems; j++) {       // findL where it goes
             if (a[j] > value) {            // (linear search)
                 break;
             }
@@ -101,7 +101,7 @@ public class OrderedArray {
             } else if (lowerBound > upperBound) {
                 a[nElems] = value;
                 nElems++;
-                return nElems - 1;             // can't find it
+                return nElems - 1;             // can't findL it
 
             } else {                      // divide range
                 if (a[curIn] < value) {
@@ -115,9 +115,9 @@ public class OrderedArray {
     }
 
     public boolean delete(long value) {
-        int j = find(value);
+        int j = findL(value);
 
-        if(j==nElems) {                 // can't find it
+        if(j==nElems) {                 // can't findL it
             return false;
         } else {                           // found it
 

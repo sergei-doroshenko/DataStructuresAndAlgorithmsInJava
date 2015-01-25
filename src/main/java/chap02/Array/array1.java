@@ -30,12 +30,12 @@ class ArrayApp
          System.out.print(arr[j] + " ");
       System.out.println("");
 //--------------------------------------------------------------
-      searchKey = 66;              // find item with key 66
+      searchKey = 66;              // findL item with key 66
       for(j=0; j<nElems; j++)          // for each element,
          if(arr[j] == searchKey)       // found item?
             break;                     // yes, exit before end
       if(j == nElems)                  // at the end?
-         System.out.println("Can't find " + searchKey); // yes
+         System.out.println("Can't findL " + searchKey); // yes
       else
          System.out.println("Found " + searchKey);      // no
 //--------------------------------------------------------------

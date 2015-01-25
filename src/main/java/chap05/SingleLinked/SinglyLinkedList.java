@@ -98,7 +98,7 @@ public class SinglyLinkedList<T> implements Iterable<T> {
      * @return - element index in the list
      * Time Complexity = O(N)
      */
-    public int find(T key) {         // find index of element with given key
+    public int find(T key) {         // findL index of element with given key
         int index = -1;              // (assumes non-empty list)
 
         for (T elem : this) {
@@ -116,11 +116,11 @@ public class SinglyLinkedList<T> implements Iterable<T> {
      * @return Link object
      * Time Complexity = O(N)
      */
-    private Link findLink(T key) {            // find link with given key (assumes non-empty list)
+    private Link findLink(T key) {            // findL link with given key (assumes non-empty list)
         Link current = first;              // start at 'first'
         while(!current.element.equals(key)) {       // while no match,
             if(current.next == null) {       // if end of list,
-                return null;                 // didn't find it
+                return null;                 // didn't findL it
             } else {                            // not end of list,
                 current = current.next;      // go to next link
             }
@@ -176,7 +176,7 @@ public class SinglyLinkedList<T> implements Iterable<T> {
 
         while(!(current.element).equals(key)) {
             if (current.next == null) {      // reach last link, but element not equal key
-                return null;                 // didn't find it
+                return null;                 // didn't findL it
             } else {
                 previous = current;          // go to next link
                 current = current.next;

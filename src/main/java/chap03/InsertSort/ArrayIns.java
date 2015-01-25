@@ -82,7 +82,7 @@ public class ArrayIns {
             element = a[curInd];
             nextElemInd = curInd + 1;
 
-            while (nextElemInd < nElems && element == a[nextElemInd]) { // find where dups ends
+            while (nextElemInd < nElems && element == a[nextElemInd]) { // findL where dups ends
                 nextElemInd++;                  // points to the next (not dubs) element
             }
 
