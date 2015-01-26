@@ -18,7 +18,7 @@ public class CompareSortApp2 {
         //generateTestDataReverse("longs10Reverse.txt", 10);
         //generateTestDataSorted("longs100KSorted.txt", 99_999);
         //generateTestData("longs100-4.txt", 100);
-        runTests("longs10K.txt", MAX_SIZE);
+        runTests("longs100K.txt", MAX_SIZE);
     }  // end main()
 
     public static <T> void writeResultsToFile(ArrayOG<T> arr, String fileName) {
@@ -104,6 +104,7 @@ public class CompareSortApp2 {
         ArrayOG<Integer> arr1 = new ArrayOG<>(size);
         ArrayOG<Integer> arr2 = new ArrayOG<>(size);
         ArrayOG<Integer> arr3 = new ArrayOG<>(size);
+        ArrayOG<Integer> arr4 = new ArrayOG<>(size);
 
         System.out.println("Create arrays...");
         File inFile = AppUtils.getInstance().getFileFromResources(dataFileName); // "res/longs100K.txt"
@@ -124,6 +125,7 @@ public class CompareSortApp2 {
                     arr1.insert(Integer.valueOf(line));
                     arr2.insert(Integer.valueOf(line));
                     arr3.insert(Integer.valueOf(line));
+                    arr4.insert(Integer.valueOf(line));
                 }
             }
 
@@ -148,7 +150,9 @@ public class CompareSortApp2 {
         };
         System.out.println("Run tests..");
 
-        long start = System.currentTimeMillis();
+        long start;
+
+        start = System.currentTimeMillis();
         arr2.insertionSort(integerComparator);             // insertion sort
         System.out.println("Elapsed time (insertion sort): " + ((System.currentTimeMillis() - start)/1000.0));
         writeResultsToFile(arr2, "res/resultsInsertion.txt");
@@ -162,8 +166,15 @@ public class CompareSortApp2 {
         writeResultsToFile(arr1, "res/resultsBubble.txt");
 
         start = System.currentTimeMillis();
+        arr3.mergeSort(integerComparator);             // selection sort
+        System.out.println("Elapsed time (merge sort): " + ((System.currentTimeMillis() - start)/1000.0));
+        writeResultsToFile(arr3, "res/resultsMerge.txt");
+
+        start = System.currentTimeMillis();
         arr3.selectionSort(integerComparator);             // selection sort
         System.out.println("Elapsed time (selection sort): " + ((System.currentTimeMillis() - start)/1000.0));
         writeResultsToFile(arr3, "res/resultsSelection.txt");
+
+
     }
 }

@@ -24,7 +24,8 @@ public class ObjectSortAppWithArrayOG {
 
         System.out.println("Before sorting:");
         arr.display();                 // display items
-
+        System.out.println("-----------------------------------------------------------");
+        //---------------------------------------------------------------------
         Comparator<Person> lastNameComparator = new Comparator<Person>() {
             @Override
             public int compare(Person o1, Person o2) {
@@ -51,12 +52,15 @@ public class ObjectSortAppWithArrayOG {
                 return 1;
             }
         };
+        //---------------------------------------------------------------------
 
-        arr.insertionSort(lastNameComparator);           // insertion-sort them
+//        arr.insertionSort(lastNameComparator);           // insertion-sort them
+//        arr.bubbleSort2(lastNameComparator);
+        arr.mergeSort(lastNameComparator);
 
         System.out.println("After sorting:");
         arr.display();                 // display them again
-
+        System.out.println("-----------------------------------------------------------");
         System.out.println("For each loop:");
         for (Person p : arr) {
             System.out.println(p);
