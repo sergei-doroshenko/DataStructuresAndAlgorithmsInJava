@@ -8,14 +8,11 @@ public class BranchMaker {
     private int right;
     private char[] arr;
     private int arrInd;
-    private int linesNumber;
 
     public BranchMaker(int left, int right) {
         this.left = left;
         this.right = right;
-        this.linesNumber = (int) Math.log(right + 1);
-        this.arr = new char[80];
-
+        this.arr = new char[(Calculator.lg(right + 1) + 1) * (right + 1)];
     }
 
     public BranchMaker make() {
