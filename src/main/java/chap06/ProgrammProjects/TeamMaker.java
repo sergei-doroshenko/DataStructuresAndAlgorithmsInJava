@@ -45,7 +45,7 @@ public class TeamMaker {
     }
 
     public static void main (String[] args) {
-        showTeams(5, 3, "", 'A');
+        showTeams(6, 4, "", 'A');
         System.out.println("===============================================");
         System.out.println("Teams: " + TEAMS);
         System.out.println("Recursive calls: " + COUNTER);

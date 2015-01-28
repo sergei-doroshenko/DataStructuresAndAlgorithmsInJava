@@ -1,5 +1,7 @@
 package chap06.ProgrammProjects;
 
+import libs.AppUtils;
+
 /** The Knapsack Problem
  * Created by Sergei Doroshenko on 27.01.2015.
  */
@@ -19,17 +21,27 @@ public class KnapsackX {
     }
 
     private boolean find(int start, int weight){
+
+        /*  The base cases */
         if (start == items.length){ // index out of bounds
-            return false;
+            return false;           // return false without recursion
         }
 
         int curr = items[start];       // save current item
 
         if (curr == weight){           // item match the weight
-            inventory[start] = curr;   // took it in inventory
+            inventory[start] = curr;   // take it in the inventory
             return true;
+        /*
+        * If item doesn't match to the weight. It may be in two cases:
+        * 1. item more than remain weight
+        * 2. item less than remain weight, but further execution of the program return false.
+        * That's mean there is not items combinations that match remain weight.
+        *  We check it recursively: !find(start + 1, weight - curr).
+        * So in this case we doesn't include item in the inventory (e.g. inventory[start] = curr)
+        */
         } else if (curr > weight || !find(start + 1, weight - curr)){ // try to take item, if not
-            return find(start + 1, weight);                           // skip it and move forward
+            return find(start + 1, weight);                           // skip it (start + 1) and move forward
         }
 
         inventory[start] = curr;
@@ -51,15 +63,15 @@ public class KnapsackX {
     }
 
     public void printItems() {
-        System.out.println(arrToString("Items:     ", items));
+        System.out.println(AppUtils.arrToStr("Items:     ", items));
     }
 
     public void printInventory() {
-        System.out.println(arrToString("Inventory: ", inventory));
+        System.out.println(AppUtils.arrToStr("Inventory: ", inventory));
     }
 
     public static void main(String[] args) {
-        KnapsackX knapsack = new KnapsackX(new int[]{11, 8, 7, 6, 5, 4}, 20);
+        KnapsackX knapsack = new KnapsackX(new int[]{18, 8, 7, 6, 5, 4}, 20);
         knapsack.printItems();
 
         System.out.println("=======================================================");

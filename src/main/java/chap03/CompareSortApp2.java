@@ -12,13 +12,13 @@ import java.util.Comparator;
 public class CompareSortApp2 {
     public static String ABSOLUTE_PATH = new File(".").getAbsolutePath();
     public static String RESOURCES_DIR = "/src/main/resources/";
-    public static int MAX_SIZE = 100_000; // array size
+    public static int MAX_SIZE = 100; // array size
 
     public static void main(String[] args) {
-        //generateTestDataReverse("longs10Reverse.txt", 10);
+        //generateTestDataReverse("longs100Reverse.txt", 100);
         //generateTestDataSorted("longs100KSorted.txt", 99_999);
         //generateTestData("longs100-4.txt", 100);
-        runTests("longs100K.txt", MAX_SIZE);
+        runTests("longs100Reverse.txt", MAX_SIZE);
     }  // end main()
 
     public static <T> void writeResultsToFile(ArrayOG<T> arr, String fileName) {
@@ -80,7 +80,7 @@ public class CompareSortApp2 {
         }
     }
 
-    public static void generateTestDataSorted(String fileName, int quantity) { // Generates test data from 99999..0
+    public static void generateTestDataSorted(String fileName, int quantity) { // Generates test data from 0..99999
         File outFile = new File(ABSOLUTE_PATH + RESOURCES_DIR + fileName); //
         PrintWriter writer = null;
 
@@ -102,9 +102,9 @@ public class CompareSortApp2 {
     public static void runTests(String dataFileName, int size) {
         System.out.println("Application started....");
         ArrayOG<Integer> arr1 = new ArrayOG<>(size);
-        ArrayOG<Integer> arr2 = new ArrayOG<>(size);
-        ArrayOG<Integer> arr3 = new ArrayOG<>(size);
-        ArrayOG<Integer> arr4 = new ArrayOG<>(size);
+        //ArrayOG<Integer> arr2 = new ArrayOG<>(size);
+        //ArrayOG<Integer> arr3 = new ArrayOG<>(size);
+        //ArrayOG<Integer> arr4 = new ArrayOG<>(size);
 
         System.out.println("Create arrays...");
         File inFile = AppUtils.getInstance().getFileFromResources(dataFileName); // "res/longs100K.txt"
@@ -123,9 +123,9 @@ public class CompareSortApp2 {
                 line = reader.readLine();
                 if (line != null) {
                     arr1.insert(Integer.valueOf(line));
-                    arr2.insert(Integer.valueOf(line));
-                    arr3.insert(Integer.valueOf(line));
-                    arr4.insert(Integer.valueOf(line));
+                    //arr2.insert(Integer.valueOf(line));
+                    //arr3.insert(Integer.valueOf(line));
+                    //arr4.insert(Integer.valueOf(line));
                 }
             }
 
@@ -153,28 +153,37 @@ public class CompareSortApp2 {
         long start;
 
         start = System.currentTimeMillis();
-        arr2.insertionSort(integerComparator);             // insertion sort
+        arr1.quickSort(integerComparator);             // quick sort
+        System.out.println("Elapsed time (quick sort): " + ((System.currentTimeMillis() - start)/1000.0));
+        writeResultsToFile(arr1, "res/resultsQuick.txt");
+        System.out.println("Copy: " + arr1.getCopyCounter() + ", Compare: " + arr1.getCompareCounter());
+
+        /*start = System.currentTimeMillis();
+        arr3.shellSort(integerComparator);             // shell sort
+        System.out.println("Elapsed time (shell sort): " + ((System.currentTimeMillis() - start)/1000.0));
+        writeResultsToFile(arr3, "res/resultsShell.txt");*/
+
+        /*start = System.currentTimeMillis();
+        arr1.insertionSort(integerComparator);             // insertion sort
         System.out.println("Elapsed time (insertion sort): " + ((System.currentTimeMillis() - start)/1000.0));
-        writeResultsToFile(arr2, "res/resultsInsertion.txt");
+        writeResultsToFile(arr1, "res/resultsInsertion.txt");*/
 
 
-        start = System.currentTimeMillis();
+        /*start = System.currentTimeMillis();
         //arr1.bubbleSort(integerComparator);             // bubble sort
         arr1.bubbleSort2(integerComparator);             // bubble sort with two ends moving
         long finish = System.currentTimeMillis();
         System.out.println("Elapsed time (bubble sort): " + ((finish - start)/1000.0));
-        writeResultsToFile(arr1, "res/resultsBubble.txt");
+        writeResultsToFile(arr1, "res/resultsBubble.txt");*/
 
-        start = System.currentTimeMillis();
-        arr3.mergeSort(integerComparator);             // selection sort
+        /*start = System.currentTimeMillis();
+        arr3.mergeSort(integerComparator);             // merge sort
         System.out.println("Elapsed time (merge sort): " + ((System.currentTimeMillis() - start)/1000.0));
-        writeResultsToFile(arr3, "res/resultsMerge.txt");
+        writeResultsToFile(arr3, "res/resultsMerge.txt");*/
 
-        start = System.currentTimeMillis();
+        /*start = System.currentTimeMillis();
         arr3.selectionSort(integerComparator);             // selection sort
         System.out.println("Elapsed time (selection sort): " + ((System.currentTimeMillis() - start)/1000.0));
-        writeResultsToFile(arr3, "res/resultsSelection.txt");
-
-
+        writeResultsToFile(arr3, "res/resultsSelection.txt");*/
     }
 }

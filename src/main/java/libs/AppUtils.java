@@ -46,4 +46,32 @@ public final class AppUtils {
         //ClassLoader classLoader = getClass().getClassLoader();
         return new File(classLoader.getResource(fileName).getFile());
     }
+
+    public static String arrToStr(String head, int[] arr) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(head);
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > 0) {
+                sb.append(arr[i]);
+                if (i < arr.length - 1) {
+                    sb.append(", ");
+                }
+            }
+        }
+        return sb.toString();
+    }
+
+    public static String arrToStr(String head, Object[] arr) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(head);
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != null) {
+                sb.append(arr[i]);
+                if (i < arr.length - 1) {
+                    sb.append(", ");
+                }
+            }
+        }
+        return sb.toString();
+    }
 }

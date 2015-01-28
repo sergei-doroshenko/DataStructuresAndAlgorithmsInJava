@@ -9,6 +9,9 @@ import java.util.Iterator;
 public class ArrayOG<T> implements Iterable<T> {
     private T[] a;                    // ref to array a
     private int nElems;               // number of data items
+    private int copyCounter;
+    private int compareCounter;
+
     //--------------------------------------------------------------
     public ArrayOG(int max) {        // constructor
 
@@ -16,6 +19,28 @@ public class ArrayOG<T> implements Iterable<T> {
         nElems = 0;                  // no items yet
     }
     //--------------------------------------------------------------
+
+
+    public int getCopyCounter() {
+        return copyCounter;
+    }
+
+    public void setCopyCounter(int copyCounter) {
+        this.copyCounter = copyCounter;
+    }
+
+    public int getCompareCounter() {
+        return compareCounter;
+    }
+
+    public void setCompareCounter(int compareCounter) {
+        this.compareCounter = compareCounter;
+    }
+
+    public int size() {
+        return nElems;
+    }
+
     // put person into array
     public void insert(T t) {
         a[nElems] = t;
@@ -31,6 +56,7 @@ public class ArrayOG<T> implements Iterable<T> {
 
     /**
      * One way move start --> end
+     * Time complexity = O(n2)
      * @param comparator
      */
     public void bubbleSort(Comparator<T> comparator) {
@@ -50,6 +76,8 @@ public class ArrayOG<T> implements Iterable<T> {
         T temp = a[one];
         a[one] = a[two];
         a[two] = temp;
+        copyCounter += 1;
+        //System.out.println("Swap: a[" + one + "]=" + a[one] +" , a[" + two + "]=" + a[two]);
     }
     //--------------------------------------------------------------
 
@@ -57,6 +85,7 @@ public class ArrayOG<T> implements Iterable<T> {
      * Two ways move start --> end
      *        than
      *               start <-- end
+     * Time complexity = O(n2)
      * @param comparator
      */
     public void bubbleSort2(Comparator<T> comparator) {
@@ -80,6 +109,11 @@ public class ArrayOG<T> implements Iterable<T> {
         }
     }  // end bubbleSort2()
     //----------------------------------------------------------------
+
+    /**
+     * Time complexity = O(n2)
+     * @param comparator
+     */
     public void selectionSort(Comparator<T> comparator) {
         int out, in, min;
 
@@ -97,12 +131,32 @@ public class ArrayOG<T> implements Iterable<T> {
         }  // end for(out)
     }  // end selectionSort()
     //--------------------------------------------------------------
+
+    /**
+     * Time complexity = O(n2)
+     * @param comparator
+     */
     public void insertionSort(Comparator<T> comparator) {
         int in, out;
 
         for(out = 1; out < nElems; out++) {
             T temp = a[out];       // out is dividing line
             in = out;                   // start shifting at out
+
+            while(in > 0 && comparator.compare(a[in-1], temp) > 0) { // until smaller one found,
+                a[in] = a[in-1];         // shift item to the right
+                --in;                    // go left one position
+            }
+            a[in] = temp;               // insert marked item
+        }  // end for
+    }  // end insertionSort()
+
+    public void insertionSort(int left, int rigth, Comparator<T> comparator) {
+        int in, out;                      //  sorted on left of out
+
+        for(out = left + 1; out <= rigth; out++) {
+            T temp = a[out];            // remove marked item
+            in = out;                   // start shifts at out
 
             while(in > 0 && comparator.compare(a[in-1], temp) > 0) { // until smaller one found,
                 a[in] = a[in-1];         // shift item to the right
@@ -179,7 +233,268 @@ public class ArrayOG<T> implements Iterable<T> {
             a[lowerBound + j] = workSpace[j];
         }
     }  // end merge()
-    //-----------------------------------------------------------
+
+    /**
+     * Complexity = O(n^3/2) - O(n^7/6)
+     * @param comparator
+     */
+    public void shellSort(Comparator<T> comparator) {
+        int inner, outer;
+        T temp;
+
+        int h = 1;                     // find initial value of h
+        while(h <= nElems/3) {
+            h = h * 3 + 1;                // (1, 4, 13, 40, 121, ...)
+        }
+
+        while(h > 0) {                     // decreasing h, until h = 1
+
+            // h-sort the file
+            for(outer = h; outer < nElems; outer++) {
+                temp = a[outer];
+                inner = outer;
+                // one subpass (eg 0, 4, 8)
+
+                while(inner > h - 1 && comparator.compare(a[inner-h], temp) >= 0) { // a[inner-h] >=  temp
+                    a[inner] = a[inner-h];
+                    inner -= h;
+                }
+
+                a[inner] = temp;
+            }  // end for
+
+            h = (h-1) / 3;              // decrease h
+        }  // end while(h>0)
+
+    }  // end shellSort()
+    //--------------------------------------------------------------
+
+    /**
+     * Time complexity = O(N*logN)
+     * @param comparator - comparator for compare two items
+     */
+    public void quickSort(Comparator<T> comparator) {
+        recQuickSort2(0, nElems - 1, comparator);
+        /* Another approach - remove insertion sort from recQuickSort
+         for sort small sub-arrays and use insertion sort after quick sort
+         when array is almost sorted. */
+    }
+
+    /**
+     * Simple implementation of Quick sort algorithm
+     * @param left - left bound of array (sub-array)
+     * @param right - right bound of array (sub-array)
+     * @param comparator - comparator for compare two items
+     */
+    public void recQuickSort1(int left, int right, Comparator<T> comparator) {
+        /* ------------- Recursion base case  -------------------  */
+        if(right-left <= 0) {              // if size <= 1,
+            return;                        // already sorted
+        } else {                           // size is 2 or larger
+            /* IMPORTANT STEP */
+            T pivot = a[right];           // rightmost item used in previous implementation
+
+            T median = medianOf3(left, right, comparator);
+            // partition range
+            int partition = partitionIt1(left, right, median, comparator);
+            /* After partition pivot element is already sorted and placed at final position. */
+
+            recQuickSort1(left, partition - 1, comparator);   // sort left side
+            recQuickSort1(partition + 1, right, comparator);  // sort right side
+        }
+    }  // end recQuickSort1()
+
+
+    /**
+     * Improved implementation with median and manual sort for sub-arrays which contains less than 4 elements.
+     * @param left - left bound of array (sub-array)
+     * @param right - right bound of array (sub-array)
+     * @param comparator - comparator for compare two items
+     */
+    public void recQuickSort2(int left, int right, Comparator<T> comparator) {
+        int size = right - left + 1;
+
+        /* ------------- Recursion base case  -------------------  */
+        if(size <= 3) {                           // manual sort if small
+            manualSort(left, right, comparator);
+        } else {
+            /* IMPORTANT STEP */
+            T median = medianOf3(left, right, comparator);
+
+            // partition range
+            int partition = partitionIt2(left, right, median, comparator);
+
+            recQuickSort2(left, partition - 1, comparator);   // sort left side
+            recQuickSort2(partition + 1, right, comparator);  // sort right side
+
+        }
+
+    }  // end recQuickSort2()
+
+    /**
+     * Improved implementation with median and insertion sort for sub-arrays with size less than 10.
+     * @param left - left bound of array (sub-array)
+     * @param right - right bound of array (sub-array)
+     * @param comparator - comparator for compare two items
+     */
+    public void recQuickSort3(int left, int right, Comparator<T> comparator) {
+        int size = right-left+1;
+
+        /* ------------- Recursion base case  -------------------  */
+        if(size < 10) {                           // manual sort if small
+            insertionSort(left, right, comparator);
+        } else {
+            /* IMPORTANT STEP */
+            T median = medianOf3(left, right, comparator);
+
+            // partition range
+            int partition = partitionIt2(left, right, median, comparator);
+
+            recQuickSort3(left, partition - 1, comparator);   // sort left side
+            recQuickSort3(partition + 1, right, comparator);  // sort right side
+
+        }
+
+    }  // end recQuickSort3()
+
+    public void manualSort(int left, int right, Comparator<T> comparator) {
+        int size = right - left + 1;
+        if(compareCounter++ > -1 && size <= 1) {
+            return;         // no sort necessary
+        }
+
+        if(size == 2) {    // 2-sort left and right
+            if( compareCounter++ > -1 && comparator.compare(a[left], a[right]) > 0 ) {// a[left] > a[right]
+                swap(left, right);
+            }
+            return;
+        } else {               // size is 3, 3-sort left, center, & right
+            if( compareCounter++ > -1 && comparator.compare(a[left],a[right-1]) > 0 ) {   // a[left] > a[right-1]
+                swap(left, right - 1);                           // left, center
+            }
+
+            if( compareCounter++ > -1 && comparator.compare(a[left], a[right]) > 0 ) {    // a[left] > a[right]
+                swap(left, right);                               // left, right
+            }
+
+            if( compareCounter++ > -1 && comparator.compare(a[right-1], a[right]) > 0 ) { // a[right-1] > a[right]
+                swap(right - 1, right);                          // center, right
+            }
+
+            //compareCounter += 3;
+        }
+    }  // end manualSort()
+
+    /** This method returns the index number of the partition:
+     * the left element in the right (larger keys) sub-array.
+     * Time complexity = O(N)
+     * @param left - left bound of array (sub-array)
+     * @param right - right bound of array (sub-array)
+     * @param pivot - average estimated value for the partition array
+     * @param comparator - comparator for compare two array items
+     * @return - the left element in the right (larger keys) sub-array
+     */
+    public int partitionIt(int left, int right, T pivot, Comparator<T> comparator) {
+        /*  Initial pointers positions   */
+        int leftPtr = left - 1;           // right of first elem (leftPtr - left Pointer)
+        int rightPtr = right + 1;         // left of pivot
+
+        while(true) {
+            /*=========-------- Move from left(e.g. 0-index) to right ----------=================*/
+            // find bigger item in left (smaller) part
+            while(leftPtr < right &&       // compare leftPtr with right to avoid array out of bound
+                    comparator.compare(a[++leftPtr], pivot) < 0) //a[++leftPtr] < pivot
+                ;  // (nop)
+
+            /*=======------ Move from right (e.g. arr.length-1-index) to left -------=============*/
+            // find smaller item in right (bigger) part
+            while(rightPtr > left &&       // compare rightPtr with left to avoid array out of bound
+                    comparator.compare(a[--rightPtr], pivot) > 0) // a[--rightPtr] > pivot
+                ;  // (nop)
+
+            if(leftPtr >= rightPtr) {          // if pointers cross,
+                break;                         // partition DONE
+            } else {                           // not crossed, so
+                swap(leftPtr, rightPtr);       // swap elements
+            }
+        }  // end while(true)
+        return leftPtr;                   // return partition
+    }  // end partitionIt()
+
+    /* For partition in simple quick sort implementation quick sort 1 */
+    public int partitionIt1(int left, int right, T pivot, Comparator<T> comparator) {
+        /*  Initial pointers positions   */
+        int leftPtr = left-1;           // left    (after ++)
+        int rightPtr = right;           // right-1 (after --)
+
+        while(true) {
+            /*=========-------- Move from left(e.g. 0-index) to right ----------=================*/
+            // find bigger item in left (smaller) part
+            while(comparator.compare(a[++leftPtr], pivot) < 0) //a[++leftPtr] < pivot
+                ;  // (nop)
+
+            /*=======------ Move from right (e.g. arr.length-1-index) to left -------=============*/
+            // find smaller item in right (bigger) part
+            while(rightPtr > 0 && comparator.compare(a[--rightPtr], pivot) > 0) // a[--rightPtr] > pivot
+                ;  // (nop)
+
+            if(leftPtr >= rightPtr) {          // if pointers cross,
+                break;                         // partition DONE
+            } else {                           // not crossed, so
+                swap(leftPtr, rightPtr);       // swap elements
+            }
+        }  // end while(true)
+        swap(leftPtr, right);             // restore pivot
+        return leftPtr;                   // return partition
+    }  // end partitionIt1()
+
+    /* For partition in simple quick sort implementation quick sort 2 */
+    public int partitionIt2(int left, int right, T pivot, Comparator<T> comparator) {
+        /*  Initial pointers positions   */
+        int leftPtr = left;             // right of first elem
+        int rightPtr = right - 1;       // left of pivot
+
+        while(true) {
+            /*=========-------- Move from left(e.g. 0-index) to right ----------=================*/
+            // find bigger item in left (smaller) part
+            while(compareCounter++ > -1 && comparator.compare(a[++leftPtr], pivot) < 0) //a[++leftPtr] < pivot
+            ;  // (nop)
+
+            /*=======------ Move from right (e.g. arr.length-1-index) to left -------=============*/
+            // find smaller item in right (bigger) part
+            while(compareCounter++ > -1 && comparator.compare(a[--rightPtr], pivot) > 0) // a[--rightPtr] > pivot
+            ;  // (nop)
+
+            if(compareCounter++ > -1 && leftPtr >= rightPtr) {    // if pointers cross,
+                break;                                            // partition DONE
+            } else {                                              // not crossed, so
+                swap(leftPtr, rightPtr);                          // swap elements
+            }
+        }  // end while(true)
+        swap(leftPtr, right - 1);              // restore pivot
+        return leftPtr;                        // return partition
+    }  // end partitionIt1()
+
+    public T medianOf3(int left, int right, Comparator<T> comparator) {
+        int center = (left + right)/2;
+
+        // order left & center
+            if( comparator.compare(a[left], a[center]) > 0 ) // a[left] > a[center]
+            swap(left, center);
+        // order left & right
+        if( comparator.compare(a[left], a[right]) > 0 )  // a[left] > a[right]
+            swap(left, right);
+        // order center & right
+        if( comparator.compare(a[center],a[right]) > 0 ) // a[center] > a[right]
+            swap(center, right);
+
+        swap(center, right-1);             // put pivot on right
+        return a[right-1];          // return median value
+    }  // end medianOf3()
+
+
+    //-----------------------------------------------------------------------------------------------------
+
 
     @Override
     public Iterator<T> iterator() {
@@ -205,5 +520,13 @@ public class ArrayOG<T> implements Iterable<T> {
 
         }
     }
-//--------------------------------------------------------------
+
+    @Override
+    public String toString() {
+        String string = "";
+        for (T item : a) {
+            string += item + " ";
+        }
+        return string;
+    }
 }
