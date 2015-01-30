@@ -27,14 +27,20 @@ public final class AppUtils {
         InputStreamReader isr = new InputStreamReader(System.in);
         BufferedReader br = new BufferedReader(isr);
         String s = br.readLine();
-        br.close();
-        isr.close();
+        /*br.close();
+        isr.close();*/
         return s;
     }
     //-------------------------------------------------------------
     public static int getInt() throws IOException {
         String s = getString();
         return Integer.parseInt(s);
+    }
+    //-------------------------------------------------------------
+
+    public static char getChar() throws IOException {
+        String s = getString();
+        return s.charAt(0);
     }
     //-------------------------------------------------------------
     /**

@@ -2,23 +2,68 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c3b3e10-7393-4a11-8d8c-83b53abce381" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/chap07/Partition/PartitionApp.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/chap07/QuickSort/QuickSort1App.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/chap07/ProgrammingProjects/ArrayPart.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/chap07/ProgrammingProjects/KthLargest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/chap07/ProgrammingProjects/KthLargestApp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/chap08/ProgrammingProjects/LetterTree.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/chap08/ProgrammingProjects/LetterTreeApp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/chap07/ProgrammingProjects/MadianApp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/chap07/ProgrammingProjects/PartitionApp2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/chap07/ProgrammingProjects/RadixSort.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/chap07/QuickSort/ShellSortApp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/chap08/tree/Tree.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/chap08/tree/TreeApp.java" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap05\ProgramProjects\CycleDoublyLinkedList$1.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap05\ProgramProjects\CycleDoublyLinkedList$DirectIterator.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap05\ProgramProjects\CycleDoublyLinkedList$Link.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap05\ProgramProjects\CycleDoublyLinkedList.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap05\ProgramProjects\CycleDoublyLinkedListApp.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap05\ProgramProjects\DequeDLL.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap05\ProgramProjects\DequeDLLApp.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap05\ProgramProjects\Josephus.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap05\ProgramProjects\MatrixDLL$Node.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap05\ProgramProjects\MatrixDLL.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap05\ProgramProjects\MatrixDLLApp.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap05\ProgramProjects\MatrixSLL$Node.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap05\ProgramProjects\MatrixSLL.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap05\ProgramProjects\MatrixSLLApp.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap05\ProgramProjects\PriorityOueueSSLLApp.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap05\ProgramProjects\PriorityQueueSSLL.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap05\ProgramProjects\StackCDLL.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap05\ProgramProjects\StackCDLLApp.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap06\ProgrammProjects\Backpack.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap06\ProgrammProjects\BranchMaker.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap06\ProgrammProjects\Calculator.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap06\ProgrammProjects\Knapsack.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap06\ProgrammProjects\KnapsackX.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap06\ProgrammProjects\TeamMaker.class" afterPath="" />
+      <change type="DELETED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\target\classes\chap06\ProgrammProjects\nkCombinations.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/libs/AppUtils.class" afterPath="$PROJECT_DIR$/target/classes/libs/AppUtils.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/chap03/ObjectSort/ArrayOG$ArrayOGIterator.class" afterPath="$PROJECT_DIR$/target/classes/chap03/ObjectSort/ArrayOG$ArrayOGIterator.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/chap03/ObjectSort/ArrayOG.class" afterPath="$PROJECT_DIR$/target/classes/chap03/ObjectSort/ArrayOG.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/chap03/CompareSortApp2.class" afterPath="$PROJECT_DIR$/target/classes/chap03/CompareSortApp2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/chap06/ProgrammProjects/KnapsackX.class" afterPath="$PROJECT_DIR$/target/classes/chap06/ProgrammProjects/KnapsackX.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/chap06/ProgrammProjects/TeamMaker.class" afterPath="$PROJECT_DIR$/target/classes/chap06/ProgrammProjects/TeamMaker.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/libs/AppUtils.java" afterPath="$PROJECT_DIR$/src/main/java/libs/AppUtils.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/chap03/ObjectSort/ArrayOG.java" afterPath="$PROJECT_DIR$/src/main/java/chap03/ObjectSort/ArrayOG.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/chap03/CompareSortApp2.java" afterPath="$PROJECT_DIR$/src/main/java/chap03/CompareSortApp2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/chap06/ProgrammProjects/KnapsackX.java" afterPath="$PROJECT_DIR$/src/main/java/chap06/ProgrammProjects/KnapsackX.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/chap06/ProgrammProjects/TeamMaker.java" afterPath="$PROJECT_DIR$/src/main/java/chap06/ProgrammProjects/TeamMaker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/resultsBubble.txt" afterPath="$PROJECT_DIR$/res/resultsBubble.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/resultsInsertion.txt" afterPath="$PROJECT_DIR$/res/resultsInsertion.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/resultsMerge.txt" afterPath="$PROJECT_DIR$/res/resultsMerge.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\src\main\java\chap05\ProgramProjects\CycleDoublyLinkedList.java" afterPath="$PROJECT_DIR$/src/main/java/chap05/ProgrammingProjects/CycleDoublyLinkedList.java" />
+      <change type="MOVED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\src\main\java\chap05\ProgramProjects\CycleDoublyLinkedListApp.java" afterPath="$PROJECT_DIR$/src/main/java/chap05/ProgrammingProjects/CycleDoublyLinkedListApp.java" />
+      <change type="MOVED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\src\main\java\chap05\ProgramProjects\DequeDLL.java" afterPath="$PROJECT_DIR$/src/main/java/chap05/ProgrammingProjects/DequeDLL.java" />
+      <change type="MOVED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\src\main\java\chap05\ProgramProjects\DequeDLLApp.java" afterPath="$PROJECT_DIR$/src/main/java/chap05/ProgrammingProjects/DequeDLLApp.java" />
+      <change type="MOVED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\src\main\java\chap05\ProgramProjects\Josephus.java" afterPath="$PROJECT_DIR$/src/main/java/chap05/ProgrammingProjects/Josephus.java" />
+      <change type="MOVED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\src\main\java\chap05\ProgramProjects\MatrixDLL.java" afterPath="$PROJECT_DIR$/src/main/java/chap05/ProgrammingProjects/MatrixDLL.java" />
+      <change type="MOVED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\src\main\java\chap05\ProgramProjects\MatrixDLLApp.java" afterPath="$PROJECT_DIR$/src/main/java/chap05/ProgrammingProjects/MatrixDLLApp.java" />
+      <change type="MOVED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\src\main\java\chap05\ProgramProjects\MatrixSLL.java" afterPath="$PROJECT_DIR$/src/main/java/chap05/ProgrammingProjects/MatrixSLL.java" />
+      <change type="MOVED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\src\main\java\chap05\ProgramProjects\MatrixSLLApp.java" afterPath="$PROJECT_DIR$/src/main/java/chap05/ProgrammingProjects/MatrixSLLApp.java" />
+      <change type="MOVED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\src\main\java\chap05\ProgramProjects\PriorityOueueSSLLApp.java" afterPath="$PROJECT_DIR$/src/main/java/chap05/ProgrammingProjects/PriorityOueueSSLLApp.java" />
+      <change type="MOVED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\src\main\java\chap05\ProgramProjects\PriorityQueueSSLL.java" afterPath="$PROJECT_DIR$/src/main/java/chap05/ProgrammingProjects/PriorityQueueSSLL.java" />
+      <change type="MOVED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\src\main\java\chap05\ProgramProjects\StackCDLL.java" afterPath="$PROJECT_DIR$/src/main/java/chap05/ProgrammingProjects/StackCDLL.java" />
+      <change type="MOVED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\src\main\java\chap05\ProgramProjects\StackCDLLApp.java" afterPath="$PROJECT_DIR$/src/main/java/chap05/ProgrammingProjects/StackCDLLApp.java" />
+      <change type="MOVED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\src\main\java\chap06\ProgrammProjects\Backpack.java" afterPath="$PROJECT_DIR$/src/main/java/chap06/ProgrammingProjects/Backpack.java" />
+      <change type="MOVED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\src\main\java\chap06\ProgrammProjects\BranchMaker.java" afterPath="$PROJECT_DIR$/src/main/java/chap06/ProgrammingProjects/BranchMaker.java" />
+      <change type="MOVED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\src\main\java\chap06\ProgrammProjects\Calculator.java" afterPath="$PROJECT_DIR$/src/main/java/chap06/ProgrammingProjects/Calculator.java" />
+      <change type="MOVED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\src\main\java\chap06\ProgrammProjects\Knapsack.java" afterPath="$PROJECT_DIR$/src/main/java/chap06/ProgrammingProjects/Knapsack.java" />
+      <change type="MOVED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\src\main\java\chap06\ProgrammProjects\KnapsackX.java" afterPath="$PROJECT_DIR$/src/main/java/chap06/ProgrammingProjects/KnapsackX.java" />
+      <change type="MOVED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\src\main\java\chap06\ProgrammProjects\TeamMaker.java" afterPath="$PROJECT_DIR$/src/main/java/chap06/ProgrammingProjects/TeamMaker.java" />
+      <change type="MOVED" beforePath="D:\JavaFiles\Books\RobertLaforeDataStructuresAndAlgorithmsInJava\RLaforeDataStructuresAndAlgorithms\src\main\java\chap06\ProgrammProjects\nkCombinations.java" afterPath="$PROJECT_DIR$/src/main/java/chap06/ProgrammingProjects/nkCombinations.java" />
     </list>
     <ignored path="R.Lafore.DataStructures&amp;Algorithms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,19 +102,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/chap05/InterIterator/LinkList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chap05/InterIterator/ListIterator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chap05/InterIterator/InterIterApp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chap05/Person.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chap03/ObjectSort/Person.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chap05/DoublyLinked/DoublyLinkedApp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chap05/DoublyLinked/DoubleLinkedApp2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chap05/SingleLinked/SinglyLinkedListApp.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chap05/DoublyLinked/DoublyLinkedList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chap05/SingleLinked/SinglyLinkedList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chap05/SingleLinked/SinglyLinkedListApp2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chap05/ProgramProjects/PriorityQueueSLL.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chap05/SortedLinkList/SortedSinglyLinkedList.java" />
         <option value="$PROJECT_DIR$/src/main/java/chap05/ProgramProjects/PriorityOueueSSLLApp.java" />
         <option value="$PROJECT_DIR$/src/main/java/chap05/ProgramProjects/PriorityQueueSSLL.java" />
         <option value="$PROJECT_DIR$/src/main/java/chap04/Deque/DequeArr.java" />
@@ -103,11 +135,24 @@
         <option value="$PROJECT_DIR$/src/main/java/chap06/ProgrammProjects/nkCombinations.java" />
         <option value="$PROJECT_DIR$/src/main/java/chap06/ProgrammProjects/TeamMaker.java" />
         <option value="$PROJECT_DIR$/src/main/java/chap06/ProgrammProjects/KnapsackX.java" />
-        <option value="$PROJECT_DIR$/src/main/java/libs/AppUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/chap07/Partition/PartitionApp.java" />
         <option value="$PROJECT_DIR$/src/main/java/chap03/CompareSortApp2.java" />
         <option value="$PROJECT_DIR$/src/main/java/chap07/QuickSort/QuickSort1App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chap07/QuickSort/ShellSortApp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chap07/Partition/ArrayPart.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chap07/Partition/PartitionApp2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chap07/Partition/PartitionApp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chap07/Partition/MadianApp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chap07/Partition/KthLargest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chap07/ProgrammingProjects/RadixSort.java" />
         <option value="$PROJECT_DIR$/src/main/java/chap03/ObjectSort/ArrayOG.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chap07/ProgrammingProjects/KthLargestApp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/libs/AppUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chap08/tree/TreeApp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chap08/ProgrammingProjects/LettersTree.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chap08/tree/Node.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chap08/tree/Tree.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chap08/ProgrammingProjects/LetterTreeApp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/chap08/ProgrammingProjects/LetterTree.java" />
       </list>
     </option>
   </component>
@@ -163,6 +208,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -181,280 +228,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="R.Lafore.DataStructures&amp;Algorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RLaforeDataStructuresAndAlgorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="R.Lafore.DataStructures&amp;Algorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RLaforeDataStructuresAndAlgorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="R.Lafore.DataStructures&amp;Algorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RLaforeDataStructuresAndAlgorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="R.Lafore.DataStructures&amp;Algorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RLaforeDataStructuresAndAlgorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chap07" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="QuickSort" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="R.Lafore.DataStructures&amp;Algorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RLaforeDataStructuresAndAlgorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chap07" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Partition" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="R.Lafore.DataStructures&amp;Algorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RLaforeDataStructuresAndAlgorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chap06" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="R.Lafore.DataStructures&amp;Algorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RLaforeDataStructuresAndAlgorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chap06" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ProgrammProjects" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="R.Lafore.DataStructures&amp;Algorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RLaforeDataStructuresAndAlgorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="R.Lafore.DataStructures&amp;Algorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RLaforeDataStructuresAndAlgorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chap03" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="R.Lafore.DataStructures&amp;Algorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RLaforeDataStructuresAndAlgorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chap03" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ObjectSort" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="R.Lafore.DataStructures&amp;Algorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RLaforeDataStructuresAndAlgorithms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -491,88 +266,22 @@
       <recent name="D:\JavaFiles\Books\RobertLafore.DataStructures&amp;AlgorithmsInJava\R.Lafore.DataStructures&amp;Algorithms\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="chap08.ProgrammingProjects" />
       <recent name="chap06.Triangle" />
       <recent name="chap05.ProgramProjects" />
       <recent name="chap05.SortedLinkList" />
       <recent name="chap04.Queue" />
-      <recent name="chap04.Stack" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.QuickSort1App">
-    <configuration default="false" name="TeamMaker" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="chap06.ProgrammProjects.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="chap06.ProgrammProjects.TeamMaker" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="RLaforeDataStructuresAndAlgorithms" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="KnapsackX" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="chap06.ProgrammProjects.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="chap06.ProgrammProjects.KnapsackX" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="RLaforeDataStructuresAndAlgorithms" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="CompareSortApp2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="chap03.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="chap03.CompareSortApp2" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="RLaforeDataStructuresAndAlgorithms" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="PartitionApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.LetterTreeApp">
+    <configuration default="false" name="KthLargest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="chap07.Partition.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="chap07.Partition.PartitionApp" />
+      <option name="MAIN_CLASS_NAME" value="chap07.ProgrammingProjects.KthLargest" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -587,14 +296,42 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="QuickSort1App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="RadixSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="chap07.QuickSort.*" />
+          <option name="PATTERN" value="chap07.ProgrammingProjects.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="chap07.QuickSort.QuickSort1App" />
+      <option name="MAIN_CLASS_NAME" value="chap07.ProgrammingProjects.RadixSort" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="RLaforeDataStructuresAndAlgorithms" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="KthLargestApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="chap07.ProgrammingProjects.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="chap07.ProgrammingProjects.KthLargestApp" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -606,6 +343,56 @@
       <module name="RLaforeDataStructuresAndAlgorithms" />
       <envs />
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="TreeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="chap08.tree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="chap08.tree.TreeApp" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="RLaforeDataStructuresAndAlgorithms" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="LetterTreeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="chap08.ProgrammingProjects.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="chap08.ProgrammingProjects.LetterTreeApp" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="RLaforeDataStructuresAndAlgorithms" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -763,19 +550,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.TeamMaker" />
-      <item index="1" class="java.lang.String" itemvalue="Application.KnapsackX" />
-      <item index="2" class="java.lang.String" itemvalue="Application.CompareSortApp2" />
-      <item index="3" class="java.lang.String" itemvalue="Application.PartitionApp" />
-      <item index="4" class="java.lang.String" itemvalue="Application.QuickSort1App" />
+      <item index="0" class="java.lang.String" itemvalue="Application.KthLargest" />
+      <item index="1" class="java.lang.String" itemvalue="Application.RadixSort" />
+      <item index="2" class="java.lang.String" itemvalue="Application.KthLargestApp" />
+      <item index="3" class="java.lang.String" itemvalue="Application.TreeApp" />
+      <item index="4" class="java.lang.String" itemvalue="Application.LetterTreeApp" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.QuickSort1App" />
-        <item index="1" class="java.lang.String" itemvalue="Application.CompareSortApp2" />
-        <item index="2" class="java.lang.String" itemvalue="Application.PartitionApp" />
-        <item index="3" class="java.lang.String" itemvalue="Application.KnapsackX" />
-        <item index="4" class="java.lang.String" itemvalue="Application.TeamMaker" />
+        <item index="0" class="java.lang.String" itemvalue="Application.LetterTreeApp" />
+        <item index="1" class="java.lang.String" itemvalue="Application.TreeApp" />
+        <item index="2" class="java.lang.String" itemvalue="Application.KthLargestApp" />
+        <item index="3" class="java.lang.String" itemvalue="Application.RadixSort" />
+        <item index="4" class="java.lang.String" itemvalue="Application.KthLargest" />
       </list>
     </recent_temporary>
   </component>
@@ -826,20 +613,20 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20113315" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25684607" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985783" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19349681" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32376397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3569405" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4532578" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32376397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -860,7 +647,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="118" />
+      <option name="time" value="124" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -869,97 +656,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/DoublyLinked/DoublyLinkedApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
-          <caret line="31" column="61" selection-start-line="31" selection-start-column="61" selection-end-line="31" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/DoublyLinked/DoubleLinkedApp2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="850">
-          <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/SingleLinked/SinglyLinkedListApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5050946" vertical-offset="605" max-vertical-offset="1292">
-          <caret line="56" column="33" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/SingleLinked/SinglyLinkedListApp2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17577548" vertical-offset="0" max-vertical-offset="884">
-          <caret line="7" column="66" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/DoublyLinked/DoublyLinkedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0347826" vertical-offset="5032" max-vertical-offset="6069">
-          <caret line="350" column="21" selection-start-line="350" selection-start-column="21" selection-end-line="350" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap04/PriorityQ/PriorityQ.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5176817" vertical-offset="0" max-vertical-offset="1018">
-          <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/SortedLinkList/SortedSinglyLinkedList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4012">
-          <caret line="170" column="17" selection-start-line="170" selection-start-column="17" selection-end-line="170" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/ProgramProjects/PriorityOueueSSLLApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23084384" vertical-offset="0" max-vertical-offset="1031">
-          <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/ProgramProjects/PriorityQueueSSLL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54413193" vertical-offset="0" max-vertical-offset="1031">
-          <caret line="33" column="63" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap04/Deque/DequeArr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3304348" vertical-offset="0" max-vertical-offset="1683">
-          <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/ProgramProjects/DequeDLLApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73391306" vertical-offset="54" max-vertical-offset="629">
-          <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/ProgramProjects/DequeDLL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.94086957" vertical-offset="258" max-vertical-offset="952">
-          <caret line="47" column="47" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/InterIterator/InterIterApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62089205" vertical-offset="848" max-vertical-offset="1785">
-          <caret line="83" column="17" selection-start-line="83" selection-start-column="17" selection-end-line="83" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/chap05/LinkStack/LinkStackApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13545817" vertical-offset="0" max-vertical-offset="753">
@@ -967,42 +663,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/ProgramProjects/StackCDLLApp.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/ProgrammingProjects/StackCDLLApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
           <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/ProgramProjects/CycleDoublyLinkedListApp.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/ProgrammingProjects/CycleDoublyLinkedListApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="709" max-vertical-offset="1462">
           <caret line="75" column="61" selection-start-line="75" selection-start-column="61" selection-end-line="75" selection-end-column="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/ProgramProjects/CycleDoublyLinkedList.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/ProgrammingProjects/CycleDoublyLinkedList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1160" max-vertical-offset="2941">
           <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/ProgramProjects/Josephus.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/ProgrammingProjects/Josephus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6998672" vertical-offset="0" max-vertical-offset="765">
           <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/ProgramProjects/StackCDLL.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/ProgrammingProjects/StackCDLL.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33864543" vertical-offset="0" max-vertical-offset="753">
           <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/ProgramProjects/MatrixSLLApp.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/ProgrammingProjects/MatrixSLLApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26687598" vertical-offset="0" max-vertical-offset="637">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
@@ -1016,7 +712,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/ProgramProjects/MatrixSLL.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/ProgrammingProjects/MatrixSLL.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.055328" vertical-offset="0" max-vertical-offset="1564">
           <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
@@ -1100,39 +796,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap06/ProgrammProjects/Calculator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap06/ProgrammingProjects/Calculator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
           <caret line="41" column="37" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap06/ProgrammProjects/BranchMaker.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap06/ProgrammingProjects/BranchMaker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.114754096" vertical-offset="336" max-vertical-offset="1190">
           <caret line="14" column="74" selection-start-line="14" selection-start-column="74" selection-end-line="14" selection-end-column="74" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap06/ProgrammProjects/Knapsack.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap06/ProgrammingProjects/Knapsack.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.3355965" vertical-offset="346" max-vertical-offset="1377">
           <caret line="0" column="32" selection-start-line="0" selection-start-column="32" selection-end-line="0" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap06/ProgrammProjects/nkCombinations.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap06/ProgrammingProjects/nkCombinations.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.2067039" vertical-offset="202" max-vertical-offset="986">
           <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap06/ProgrammProjects/Backpack.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap06/ProgrammingProjects/Backpack.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.9971347" vertical-offset="0" max-vertical-offset="1649">
           <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1140,7 +835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.31910765" vertical-offset="448" max-vertical-offset="1683">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1148,41 +842,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-167.2376" vertical-offset="111655" max-vertical-offset="17000102">
           <caret line="26" column="2" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/libs/AppUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70068026" vertical-offset="573" max-vertical-offset="1360">
-          <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap06/ProgrammProjects/KnapsackX.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap06/ProgrammingProjects/KnapsackX.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.82857144" vertical-offset="37" max-vertical-offset="1394">
           <caret line="40" column="97" selection-start-line="40" selection-start-column="97" selection-end-line="40" selection-end-column="97" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap06/ProgrammProjects/TeamMaker.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap06/ProgrammingProjects/TeamMaker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.80136055" vertical-offset="210" max-vertical-offset="1003">
           <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap07/Partition/PartitionApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20816326" vertical-offset="0" max-vertical-offset="735">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1190,7 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1700102">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1198,7 +870,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1700085">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1206,7 +877,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1802">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1214,36 +884,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1802">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap03/ObjectSort/ArrayOG.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22860636" vertical-offset="5899" max-vertical-offset="9061">
-          <caret line="361" column="36" selection-start-line="361" selection-start-column="36" selection-end-line="361" selection-end-column="36" />
-          <folding>
-            <element signature="e#709#710#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="e#794#795#0" expanded="true" />
-            <element signature="e#840#841#0" expanded="true" />
-            <element signature="e#878#879#0" expanded="true" />
-            <element signature="e#915#916#0" expanded="true" />
-            <element signature="e#972#973#0" expanded="true" />
-            <element signature="e#1024#1025#0" expanded="true" />
-            <element signature="e#20735#20736#0" expanded="true" />
-            <element signature="e#20779#20780#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/chap07/QuickSort/QuickSort1App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41564792" vertical-offset="0" max-vertical-offset="818">
-          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1251,10 +891,172 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33251834" vertical-offset="0" max-vertical-offset="3247">
           <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap07/QuickSort/QuickSort1App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+          <caret line="39" column="5" selection-start-line="10" selection-start-column="4" selection-end-line="39" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap07/ProgrammingProjects/PartitionApp2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
           <folding>
-            <element signature="e#4769#4940#0" expanded="true" />
-            <element signature="e#4939#4940#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap07/QuickSort/ShellSortApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+          <caret line="28" column="9" selection-start-line="23" selection-start-column="22" selection-end-line="28" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#719#720#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap07/Partition/PartitionApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
+          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap07/ProgrammingProjects/MadianApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.542515" vertical-offset="91" max-vertical-offset="1003">
+          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#728#899#0" expanded="false" />
+            <element signature="e#898#899#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap07/ProgrammingProjects/ArrayPart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3257485" vertical-offset="0" max-vertical-offset="835">
+          <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/LinkQueue/QueueSLL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16855524" vertical-offset="0" max-vertical-offset="706">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap05/LinkQueue/LinkQueueApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1203966" vertical-offset="0" max-vertical-offset="706">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap07/ProgrammingProjects/RadixSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65254235" vertical-offset="1485" max-vertical-offset="2363">
+          <caret line="110" column="31" selection-start-line="110" selection-start-column="31" selection-end-line="110" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#849#850#0" expanded="false" />
+            <element signature="e#876#877#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap07/ProgrammingProjects/KthLargestApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2155309" vertical-offset="0" max-vertical-offset="631">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#558#729#0" expanded="false" />
+            <element signature="e#728#729#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap03/ObjectSort/ArrayOG.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4817749" vertical-offset="8211" max-vertical-offset="10608">
+          <caret line="551" column="30" selection-start-line="551" selection-start-column="30" selection-end-line="551" selection-end-column="30" />
+          <folding>
+            <element signature="e#25956#25957#0" expanded="false" />
+            <element signature="e#26000#26001#0" expanded="false" />
+            <element signature="e#26146#26147#0" expanded="false" />
+            <element signature="e#26182#26183#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap07/ProgrammingProjects/KthLargest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1505547" vertical-offset="651" max-vertical-offset="1683">
+          <caret line="81" column="9" selection-start-line="77" selection-start-column="8" selection-end-line="81" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/libs/AppUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="1462">
+          <caret line="30" column="22" selection-start-line="29" selection-start-column="8" selection-end-line="30" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap08/tree/TreeApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09311348" vertical-offset="23" max-vertical-offset="1360">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap08/ProgrammingProjects/LetterTreeApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15678525" vertical-offset="0" max-vertical-offset="759">
+          <caret line="7" column="93" selection-start-line="7" selection-start-column="93" selection-end-line="7" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap08/ProgrammingProjects/LetterTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8484849" vertical-offset="172" max-vertical-offset="2329">
+          <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+          <folding>
+            <element signature="e#219#220#0" expanded="true" />
+            <element signature="e#279#280#0" expanded="true" />
+            <element signature="e#4286#4287#0" expanded="true" />
+            <element signature="e#4328#4329#0" expanded="true" />
+            <element signature="e#4382#4383#0" expanded="true" />
+            <element signature="e#4431#4432#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/chap08/tree/Tree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0" vertical-offset="3236" max-vertical-offset="4267">
+          <caret line="237" column="52" selection-start-line="237" selection-start-column="52" selection-end-line="237" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>

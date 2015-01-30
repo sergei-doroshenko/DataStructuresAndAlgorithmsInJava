@@ -1,5 +1,7 @@
 package chap03.ObjectSort;
 
+import libs.AppUtils;
+
 import java.util.Comparator;
 import java.util.Iterator;
 
@@ -7,14 +9,13 @@ import java.util.Iterator;
  * Created by Sergei_Doroshenko on 1/12/2015.
  */
 public class ArrayOG<T> implements Iterable<T> {
-    private T[] a;                    // ref to array a
-    private int nElems;               // number of data items
+    protected T[] a;                    // ref to array a
+    protected int nElems;               // number of data items
     private int copyCounter;
     private int compareCounter;
 
     //--------------------------------------------------------------
     public ArrayOG(int max) {        // constructor
-
         a = (T[]) new Object[max];   // create the array
         nElems = 0;                  // no items yet
     }
@@ -72,7 +73,7 @@ public class ArrayOG<T> implements Iterable<T> {
         }
     }  // end bubbleSort()
     //--------------------------------------------------------------
-    private void swap(int one, int two) {
+    protected void swap(int one, int two) {
         T temp = a[one];
         a[one] = a[two];
         a[two] = temp;
@@ -248,7 +249,7 @@ public class ArrayOG<T> implements Iterable<T> {
         }
 
         while(h > 0) {                     // decreasing h, until h = 1
-
+            System.out.println("h = " + h);
             // h-sort the file
             for(outer = h; outer < nElems; outer++) {
                 temp = a[outer];
@@ -261,9 +262,12 @@ public class ArrayOG<T> implements Iterable<T> {
                 }
 
                 a[inner] = temp;
+                System.out.println(this);
             }  // end for
 
-            h = (h-1) / 3;              // decrease h
+            h = (h - 1) / 3;              // decrease h
+
+            System.out.println(this);
         }  // end while(h>0)
 
     }  // end shellSort()
@@ -418,6 +422,7 @@ public class ArrayOG<T> implements Iterable<T> {
                 swap(leftPtr, rightPtr);       // swap elements
             }
         }  // end while(true)
+
         return leftPtr;                   // return partition
     }  // end partitionIt()
 
@@ -448,7 +453,7 @@ public class ArrayOG<T> implements Iterable<T> {
         return leftPtr;                   // return partition
     }  // end partitionIt1()
 
-    /* For partition in simple quick sort implementation quick sort 2 */
+    /* Use median as pivot, for implementation quick sort 2 & 3 */
     public int partitionIt2(int left, int right, T pivot, Comparator<T> comparator) {
         /*  Initial pointers positions   */
         int leftPtr = left;             // right of first elem
@@ -492,9 +497,103 @@ public class ArrayOG<T> implements Iterable<T> {
         return a[right-1];          // return median value
     }  // end medianOf3()
 
+    public int medianPartition(int left, int right, T average, Comparator<T> comparator) {
+       /*  Initial pointers positions   */
+        int leftPtr = left - 1;           // right of first elem (leftPtr - left Pointer)
+        int rightPtr = right + 1;         // left of pivot
 
+        while(true) {
+            /*=========-------- Move from left(e.g. 0-index) to right ----------=================*/
+            // find bigger item in left (smaller) part
+            while(leftPtr < right &&       // compare leftPtr with right to avoid array out of bound
+                    comparator.compare(a[++leftPtr], average) < 0) //a[++leftPtr] < pivot
+                ;  // (nop)
+
+            /*=======------ Move from right (e.g. arr.length-1-index) to left -------=============*/
+            // find smaller item in right (bigger) part
+            while(rightPtr > left &&       // compare rightPtr with left to avoid array out of bound
+                    comparator.compare(a[--rightPtr], average) > 0) // a[--rightPtr] > pivot
+                ;  // (nop)
+
+            if(leftPtr >= rightPtr) {          // if pointers cross,
+                break;                         // partition DONE
+            } else {                           // not crossed, so
+                swap(leftPtr, rightPtr);       // swap elements
+            }
+        }  // end while(true)
+
+        return leftPtr;                   // return partition
+    }
     //-----------------------------------------------------------------------------------------------------
 
+    /**
+     * Find the K-th largest element in array
+     * @param k - index (the Kth largest)
+     * @param comparator - comparator for compare two array elements
+     * @return - array element
+     */
+    public T quickSelect (int k, Comparator<T> comparator) {
+        //firstly make sure k is valid between (1, a.length)
+        if (k < 1 || k > nElems) {
+            return null; // let's assume -1 as the default bad signal though in reality we should improve
+        }
+        // otherwise, we are going to use quick sort to solve this problem
+        //though compared to full quick sort we only need to take care of the kth value at position!
+        //thus we need two support values to know the region of array we focus on
+        return findKthLargest(0, nElems -1, k, comparator);
+    }
+
+    /**
+     * Key method for finding Kth largest element
+     * @param start - start of range (sub-array)
+     * @param end - end of range (sub-array)
+     * @param k - index (the Kth largest)
+     * @param comparator - comparator for compare two array elements
+     * @return - array element
+     */
+    private T findKthLargest(int start, int end, int k, Comparator<T> comparator) {
+        // this is the key method, the basic idea is to borrow the quick sort algorithm
+        // by picking a pivot and put in place and check if it is value we are looking for
+        int pivot = start; // assume pivot position is 1st element
+        int left = start;
+        int right = end;  // we keep start/end untouched and copy values for processing in method
+
+        while (left <= right) {
+            // so we scan from left to right until we find a value which is larger than pivot value
+            while (left <= right && comparator.compare(a[left], a[pivot]) <= 0) { // a[left] <= a[pivot]
+                System.out.print("num[" + left + "]=" + a[left] + "<= a[" + pivot + "]=" + a[pivot]);
+                left++; // after this loop, the value at left is larger than pivot position thus we swapping
+                System.out.println(" so next left=" + left);
+            }
+
+            while (left <= right && comparator.compare(a[right], a[pivot]) >= 0) { // a[right] >= a[pivot]
+                System.out.print("num[" + right +"]=" + a[right] + ">= a[" + pivot + "]=" + a[pivot]);
+                right--; // similar for right one
+                System.out.println(" so next right=" + right);
+            }
+
+            // now we swap if valid
+            if (left < right) {
+                swap(left, right);
+                System.out.println(AppUtils.arrToStr("Numbers: ", a));
+            }
+        }
+        // after the loop, the correct pivot position should rely on right's position
+        swap(pivot, right);
+        System.out.println(AppUtils.arrToStr("Numbers: ", a));
+
+        // now different from quick sort, we firstly check if we can return from here
+        if (k == right + 1) { // notice k is nth, start from 1 while index starts from 0
+            return a[right]; // we immediately return as right position value is set!
+        } else if (k > right + 1) { // that's mean we have divided values to 2 groups, and kth largest can only exist in right half
+            System.out.printf("k=%d start=%d end=%d left=%d right=%d (scan right half)\n", k, start, end, left, right);
+            return findKthLargest(right + 1, end, k, comparator);
+
+        } else { // we only need focus on the left half
+            System.out.printf("k=%d start=%d end=%d left=%d right=%d (scan left half)\n",k, start, end, left, right);
+            return findKthLargest(start, right - 1, k, comparator);
+        }
+    }
 
     @Override
     public Iterator<T> iterator() {
