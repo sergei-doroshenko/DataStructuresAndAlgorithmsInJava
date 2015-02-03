@@ -47,6 +47,13 @@ public class ArrayOG<T> implements Iterable<T> {
         a[nElems] = t;
         nElems++;                          // increment size
     }
+
+    public T delete() {
+        T temp = a[nElems-1];
+        nElems--;
+        return temp;
+    }
+
     //--------------------------------------------------------------
     public void display() {             // displays array contents
         for(int j  = 0; j < nElems; j++)       // for each element,

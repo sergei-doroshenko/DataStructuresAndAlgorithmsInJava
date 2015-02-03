@@ -6,10 +6,10 @@ import java.util.Stack;
  * Created by Sergei Doroshenko on 30.01.2015.
  */
 public class LetterTree {
-    private Node root;      // first node of tree
+    private LetterNode root;      // first LetterNode of tree
 
     private LetterTree() {  // default constructor
-        root = new Node('+');
+        root = new LetterNode('+');
     }
 
     public static LetterTree getInstance(char[] chars) {
@@ -18,19 +18,19 @@ public class LetterTree {
             trees = new LetterTree[chars.length/2];
             for (int i = 0, j = 0; i < chars.length; i += 2, j++) {
                 trees[j] = new LetterTree();
-                trees[j].root.leftChild = new Node(chars[i]);
-                trees[j].root.rightChild = new Node(chars[i + 1]);
+                trees[j].root.leftChild = new LetterNode(chars[i]);
+                trees[j].root.rightChild = new LetterNode(chars[i + 1]);
             }
         } else {
             trees = new LetterTree[chars.length/2 + 1];
             int j = 0;
             for (int i = 0; i < chars.length - 1; i += 2, j++) {
                 trees[j] = new LetterTree();
-                trees[j].root.leftChild = new Node(chars[i]);
-                trees[j].root.rightChild  = new Node(chars[i + 1]);
+                trees[j].root.leftChild = new LetterNode(chars[i]);
+                trees[j].root.rightChild  = new LetterNode(chars[i + 1]);
             }
             trees[j] = new LetterTree();
-            trees[j].root.leftChild = new Node(chars[chars.length - 1]);
+            trees[j].root.leftChild = new LetterNode(chars[chars.length - 1]);
         }
 
         while (trees.length > 1) {
@@ -80,7 +80,7 @@ public class LetterTree {
             }
 
             while(globalStack.isEmpty()==false) {
-                Node temp = (Node)globalStack.pop();
+                LetterNode temp = (LetterNode)globalStack.pop();
                 if(temp != null) {
                     System.out.print(temp.cData);
                     localStack.push(temp.leftChild);
@@ -108,24 +108,4 @@ public class LetterTree {
         }  // end while isRowEmpty is false
         System.out.println("......................................................");
     }  // end displayTree()
-    // -------------------------------------------------------------
-    ////////////////////////////////////////////////////////////////
-    public static class Node {
-        char cData;           // data item (key)
-        Node leftChild;         // this node's left child
-        Node rightChild;        // this node's right child
-
-        public Node() {
-        }
-
-        public Node(char cData) {
-            this.cData = cData;
-        }
-
-        @Override
-        public String toString() {
-            return "'" + cData + '\'';
-        }
-    }  // end class Node
-    ////////////////////////////////////////////////////////////////
 }

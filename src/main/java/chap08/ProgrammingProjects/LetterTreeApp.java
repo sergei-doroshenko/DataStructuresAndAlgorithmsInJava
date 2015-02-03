@@ -1,7 +1,7 @@
 package chap08.ProgrammingProjects;
 
 /**
- * Created by user on 30.01.2015.
+ * Created by Sergei Doroshenko on 30.01.2015.
  */
 public class LetterTreeApp {
     public static void main (String[] args) {
