@@ -1,9 +1,12 @@
-package chap10.tree234;
+package chap10.tree23;
+
+import chap10.tree234.DataItem;
+import chap10.tree234.TraverseHandler;
 
 /**
  * Created by Sergei Doroshenko on 03.02.2015.
  */
-public class Tree234 {
+public class Tree23 {
     private Node root = new Node();            // make root node
     // -------------------------------------------------------------
     public int find(long key) {
@@ -26,66 +29,106 @@ public class Tree234 {
         Node curNode = root;
         DataItem tempItem = new DataItem(dValue);
 
-        while(true) {
+        while (!curNode.isLeaf()) {
+            curNode = getNextChild(curNode, dValue); // get appropriate child
+        }
 
-            if( curNode.isFull() ) {              // if node full,
-                split(curNode);                      // split it
-                curNode = curNode.getParent();         // back up
-                // search once
-                curNode = getNextChild(curNode, dValue); // end if(node is full)
-
-            } else if( curNode.isLeaf() ) {          // if node is leaf,
-                break;                            // go insert
-
-            } else {  // node is not full, not a leaf; so go to lower level
-                curNode = getNextChild(curNode, dValue);
-            }
-
-        }  // end while
-
-        curNode.insertItem(tempItem);       // insert new DataItem
+        if (curNode.isFull()) {
+            split(curNode, null, tempItem, 0); // split and insert
+            //curNode = getNextChild(curNode, dValue); // again get appropriate child for insert
+        } else {
+            curNode.insertItem(tempItem);              // insert new DataItem
+        }
     }  // end insert()
     // -------------------------------------------------------------
-    public void split(Node thisNode) {    // split the node
+    public void split(Node thisNode, Node newChildNode, DataItem tempItem, int childSplitOrder) {    // split the node and insert new value
 
         // assumes node is full
-        DataItem itemB, itemC;
-        Node parent, child2, child3;
-        int itemIndex;
+        Node newNode = new Node();
 
-        itemC = thisNode.removeItem();        // remove items from
-        itemB = thisNode.removeItem();        // this node
-        child2 = thisNode.disconnectChild(2); // remove children
-        child3 = thisNode.disconnectChild(3); // from this node
+        // item for insert in parent
+        DataItem upItem = handleChanges(thisNode, newNode, tempItem);
 
-        Node newRight = new Node();           // make new node
-
-        if (thisNode == root) {               // if this is the root,
-
-            root = new Node();                // make new root
-            parent = root;                    // root is our parent
-            root.connectChild(0, thisNode);   // connect to parent
-        } else {                              // this node not the root
-            parent = thisNode.getParent();    // get parent
+        if(!thisNode.isLeaf()) {
+            manageLinks(thisNode, newChildNode, childSplitOrder, newNode);
         }
 
-        // deal with parent
-        itemIndex = parent.insertItem(itemB); // item B to parent
-        int n = parent.getNumItems();         // total items?
-
-        for(int j = n-1; j > itemIndex; j--) {       // move parent's connections
-            Node temp = parent.disconnectChild(j);   // one child
-            parent.connectChild(j + 1, temp);        // to the right
-
+        Node parent;
+        if (thisNode == root) {
+            parent = new Node();
+            parent.connectChild(0, thisNode);
+            //parent.connectChild(1, newNode);
+            root = parent;
+        } else {
+            parent = thisNode.getParent();
         }
-        // connect newRight to parent
-        parent.connectChild(itemIndex + 1, newRight);
 
-        // deal with newRight
-        newRight.insertItem(itemC);       // item C to newRight
-        newRight.connectChild(0, child2); // connect to 0 and 1
-        newRight.connectChild(1, child3); // on newRight
+        if (parent != null) {
+            if (parent.isFull()) {
+                split(parent, newNode, upItem, thisNode.getOrder());
+            } else {
+                parent.insertItem(upItem);
+                if (parent.getNumChilds() > 1) {
+                    int or = thisNode.getOrder();
+                    if (or == 0) {
+                        Node temp = parent.disconnectChild(1);
+                        parent.connectChild(1, newNode);
+                        parent.connectChild(2, temp);
+                    } else {
+                        parent.connectChild(parent.getNumChilds(), newNode);
+                    }
+                } else {
+                    parent.connectChild(parent.getNumChilds(), newNode);
+                }
+
+            }
+        }
+
     }  // end split()
+
+    private void manageLinks(Node thisNode, Node newChildNode, int childSplitOrder, Node newNode) {
+
+            if (childSplitOrder == 0) {
+                newNode.connectChild(0, thisNode.disconnectChild(1));
+                newNode.connectChild(1, thisNode.disconnectChild(2));
+                thisNode.connectChild(1, newChildNode);
+            } else if (childSplitOrder == 1) {
+                newNode.connectChild(0, newChildNode);
+                newNode.connectChild(1, thisNode.disconnectChild(2));
+            } else {
+                newNode.connectChild(0, thisNode.disconnectChild(2));
+                newNode.connectChild(1, newChildNode);
+            }
+
+    }
+
+    private DataItem handleChanges(Node thisNode, Node newNode, DataItem tempItem) {
+
+        DataItem itemA, itemB, upItem;
+        itemB = thisNode.removeItem();        // remove items from
+        itemA = thisNode.removeItem();        // this node
+
+        long t = tempItem.dData;
+        long a = itemA.dData;
+        long b = itemB.dData;
+
+        if (t < a) {
+            upItem = itemA;
+            thisNode.insertItem(tempItem);
+            newNode.insertItem(itemB);
+        } else if (t > b) {
+            upItem = itemB;
+            thisNode.insertItem(itemA);
+            newNode.insertItem(tempItem);
+        } else {
+            upItem = tempItem;
+            thisNode.insertItem(itemA);
+            newNode.insertItem(itemB);
+        }
+        // here we have two nodes with item and one item to lift up
+        return upItem;
+    }
+
     // -------------------------------------------------------------
     // gets appropriate child of node during search for value
     public Node getNextChild(Node theNode, long theValue) {

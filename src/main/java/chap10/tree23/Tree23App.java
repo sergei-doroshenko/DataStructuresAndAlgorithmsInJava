@@ -1,24 +1,42 @@
-package chap10.tree234;
+package chap10.tree23;
 
+import chap10.tree234.DataItem;
+import chap10.tree234.TraverseHandler;
 import libs.AppUtils;
 
 import java.io.IOException;
+import java.util.Random;
 
 /**
  * Created by Sergei Doroshenko on 03.02.2015.
  * The search times for a 2-3-4 tree and for a balanced binary tree
  * such as a red-black tree are approximately equal, and are both O(logN).
  */
-public class Tree234App {
+public class Tree23App {
     public static void main(String[] args) throws IOException {
       long value;
-      Tree234 theTree = new Tree234();
+      Tree23 theTree = new Tree23();
 
-      theTree.insert(50);
-      theTree.insert(40);
-      theTree.insert(60);
+      theTree.insert(10);
+      theTree.insert(20);
       theTree.insert(30);
+      theTree.insert(40);
+      theTree.insert(50);
+      theTree.insert(60);
       theTree.insert(70);
+      theTree.insert(80);
+      theTree.insert(90);
+      theTree.insert(12);
+      theTree.insert(14);
+      theTree.insert(15);
+      theTree.insert(11);
+      theTree.insert(31);
+
+      Random r = new Random();
+      for (int i = 0; i < 100; i++) {
+          theTree.insert(r.nextInt(99) + i);
+      }
+
 
       char choice = ' ';
       while(choice != '0') {
