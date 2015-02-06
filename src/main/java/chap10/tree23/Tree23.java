@@ -156,7 +156,7 @@ public class Tree23 {
     }
 
     public void traverse(TraverseHandler handler) {
-        inOrder(handler, root);
+        preOrder(handler, root);
     }
 
     private void inOrder(TraverseHandler handler, Node localRoot) {
@@ -182,6 +182,22 @@ public class Tree23 {
             System.out.print(localRoot.iData + " ");
             inOrder(localRoot.rightChild);
         }*/
+    }
+
+    private void preOrder(TraverseHandler handler, Node localRoot) {
+        if (localRoot.isLeaf()) {
+            for (int i = 0; i < localRoot.getNumItems(); i++) {
+                handler.handle(localRoot.getItem(i));
+            }
+
+        } else {
+            int i;
+            for (i = 0; i < localRoot.getNumItems(); i++) {
+                handler.handle(localRoot.getItem(i));
+                preOrder(handler, localRoot.getChild(i));
+            }
+            preOrder(handler, localRoot.getChild(i));
+        }
     }
     // -------------------------------------------------------------
     public void displayTree() {

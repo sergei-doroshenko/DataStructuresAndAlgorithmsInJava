@@ -18,24 +18,24 @@ public class Tree23App {
       Tree23 theTree = new Tree23();
 
       theTree.insert(10);
-      theTree.insert(20);
-      theTree.insert(30);
-      theTree.insert(40);
-      theTree.insert(50);
-      theTree.insert(60);
-      theTree.insert(70);
-      theTree.insert(80);
-      theTree.insert(90);
-      theTree.insert(12);
-      theTree.insert(14);
-      theTree.insert(15);
-      theTree.insert(11);
-      theTree.insert(31);
+        theTree.insert(20);
+        theTree.insert(30);
+        theTree.insert(40);
+        theTree.insert(50);
+        theTree.insert(60);
+        theTree.insert(70);
+        theTree.insert(80);
+        theTree.insert(90);
+        theTree.insert(12);
+        theTree.insert(14);
+        theTree.insert(15);
+        theTree.insert(11);
+        theTree.insert(31);
 
-      Random r = new Random();
+      /*Random r = new Random();
       for (int i = 0; i < 100; i++) {
           theTree.insert(r.nextInt(99) + i);
-      }
+      }*/
 
 
       char choice = ' ';
