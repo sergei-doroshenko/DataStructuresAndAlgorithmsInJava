@@ -74,17 +74,17 @@ public class SortedSinglyLinkedList<T extends Comparable> implements Iterable<T>
      * @return - element index in the list
      * Time Complexity = O(N)
      */
-    public int find(T key) {         // findL index of element with given key
+    public T find(T key) {         // findL index of element with given key
         int index = -1;              // (assumes non-empty list)
 
         for (T elem : this) {
             index++;
             if (elem.equals(key)) {
-                return index;
+                return elem;
             }
         }
 
-        return -1;                     // not found it
+        return null;                     // not found it
     }
 
     /**
@@ -150,7 +150,7 @@ public class SortedSinglyLinkedList<T extends Comparable> implements Iterable<T>
      * @return date of deleted elements
      * Time Complexity = O(N)
      */
-    public T delete(int key) {
+    public T delete(T key) {
         Link current = first;              // search for link
         Link previous = first;
 
