@@ -25,8 +25,8 @@ public class TreeApp {
         theTree.insert(97, 1.5);
 
         while(true) {
-            System.out.print("Enter first letter of show, ");
-            System.out.print("insert, find, delete, or traverse: ");
+            System.out.print("Enter first letter of show: \n");
+            System.out.print("(i)-insert, (f)-find, (d)-delete, (m)-find maximum or (t)-traverse: ");
             int choice = AppUtils.getChar();
             switch(choice) {
                 case 's':
@@ -60,6 +60,9 @@ public class TreeApp {
                         System.out.print("Could not delete ");
                         System.out.print(value + '\n');
                     }
+                    break;
+                case 'm':
+                    System.out.println("Max: " + theTree.max());
                     break;
                 case 't':
                     System.out.print("Enter type 1, 2 or 3: ");

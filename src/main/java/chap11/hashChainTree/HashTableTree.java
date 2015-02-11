@@ -1,21 +1,19 @@
 package chap11.hashChainTree;
 
-import chap05.SortedLinkList.SortedSinglyLinkedList;
-import chap08.tree.Tree;
-import chap08.tree.TreeG;
+import chap08.tree.BinaryTree;
 
 /**
  * Created by Sergei Doroshenko on 09.02.2015.
  */
 public class HashTableTree<T extends Comparable<T>> {
-    private TreeG<T>[] hashArray;   // array of lists
+    private BinaryTree<T>[] hashArray;   // array of lists
     private int arraySize;
     // -------------------------------------------------------------
     public HashTableTree(int size) {          // constructor
         arraySize = size;
-        hashArray = new TreeG[arraySize];      // create array
+        hashArray = new BinaryTree[arraySize];      // create array
         for(int j = 0; j<arraySize; j++) {    // fill array
-            hashArray[j] = new TreeG<>();        // with lists
+            hashArray[j] = new BinaryTree<>();        // with lists
         }
     }
     // -------------------------------------------------------------

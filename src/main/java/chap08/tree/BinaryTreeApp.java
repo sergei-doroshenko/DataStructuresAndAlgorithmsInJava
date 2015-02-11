@@ -7,10 +7,10 @@ import java.io.IOException;
 /**
  * Created by Sergei Doroshenko on 30.01.2015.
  */
-public class TreeGApp {
+public class BinaryTreeApp {
     public static void main(String[] args) throws IOException {
         int value;
-        TreeG<Integer> theTree = new TreeG<>();
+        BinaryTree<Integer> theTree = new BinaryTree<>();
 
         theTree.insert(50);
         theTree.insert(25);
@@ -25,11 +25,12 @@ public class TreeGApp {
         theTree.insert(97);
 
         while(true) {
-            System.out.print("Enter first letter of show, ");
-            System.out.print("insert, find, delete, or traverse: ");
+            System.out.print("Enter first letter of show: \n");
+            System.out.print("(i)-insert, (f)-find, (d)-delete, (m)-find maximum or (t)-traverse: ");
             int choice = AppUtils.getChar();
             switch(choice) {
                 case 's':
+                    System.out.println("size = " + theTree.size());
                     theTree.displayTree();
                     break;
                 case 'i':
@@ -60,6 +61,9 @@ public class TreeGApp {
                         System.out.print("Could not delete ");
                         System.out.print(value + '\n');
                     }
+                    break;
+                case 'm':
+                    System.out.println("Max: " + theTree.max());
                     break;
                 case 't':
                     System.out.print("Enter type 1, 2 or 3: ");

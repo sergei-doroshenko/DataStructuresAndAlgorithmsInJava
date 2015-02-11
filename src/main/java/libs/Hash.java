@@ -12,7 +12,7 @@ public class Hash {
      * @param n - decimal integer
      * @return - number of bits
      */
-    public static int bitNumber(int n) {
+    public static int bitCount(int n) {
         return (int) Math.floor(Math.log(n)/Math.log(2)) + 1;
     }
 
@@ -43,7 +43,7 @@ public class Hash {
     public static int hash(int key, int n) {
 
         System.out.println("n=" + n + " " + Integer.toBinaryString(n));
-        int bitNumber = bitNumber(n);
+        int bitNumber = bitCount(n);
         System.out.println("bits number=" + bitNumber);
         int mask = createBitMask(bitNumber);
         System.out.println("Mask=" + mask + " " + Integer.toBinaryString(mask));
@@ -67,7 +67,7 @@ public class Hash {
         Random random = new Random();
         for (int i = 0; i < iterations; i++) {
             int k = random.nextInt(999) + 1;
-            int num1 = bitNumber(k);
+            int num1 = bitCount(k);
             int num2 = Integer.toBinaryString(k).length();
             if (num1 != num2) {
                 System.out.println("Test failed!");
@@ -91,8 +91,8 @@ public class Hash {
             int n = random.nextInt(20) + 1;
             //System.out.println("n=" + n + " " + Integer.toBinaryString(n));
 
-            int bitNumber = bitNumber(n);
-            //System.out.println("bits number=" + bitNumber);
+            int bitNumber = bitCount(n);
+            //System.out.println("bits number=" + bitCount);
 
             int mask = createBitMask(bitNumber);
             //System.out.println("Mask=" + mask + " " + Integer.toBinaryString(mask));
@@ -131,9 +131,9 @@ public class Hash {
     public static void main (String[] args) {
         int n = 25;
         System.out.println(Integer.toBinaryString(n));
-        System.out.println(bitNumber(n));
+        System.out.println(bitCount(n));
         int k = 12307;
-        int mask = createBitMask(bitNumber(n));
+        int mask = createBitMask(bitCount(n));
         System.out.println(Integer.toBinaryString(mask));
         System.out.println(mask);
         System.out.println(k);

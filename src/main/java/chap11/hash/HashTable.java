@@ -4,6 +4,7 @@ import libs.Hash;
 
 /**
  * Created by Sergei Doroshenko on 06.02.2015.
+ * insertion and searching in hash tables can approach O(1) time.
  */
 public class HashTable {
     private DataItem[] hashArray;    // array holds hash table

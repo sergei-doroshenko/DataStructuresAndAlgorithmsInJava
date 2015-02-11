@@ -68,6 +68,18 @@ public final class AppUtils {
         return sb.toString();
     }
 
+    public static String arrToStr(int[] arr) {
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < arr.length; i++) {
+
+                sb.append(arr[i]);
+
+
+        }
+        return sb.toString();
+    }
+
     public static String arrToStr(String head, long[] arr) {
         StringBuilder sb = new StringBuilder();
         sb.append(head);
@@ -81,6 +93,8 @@ public final class AppUtils {
         }
         return sb.toString();
     }
+
+
 
     public static String arrToStr(String head, Object[] arr) {
         StringBuilder sb = new StringBuilder();
@@ -111,5 +125,25 @@ public final class AppUtils {
             }
         }
         return true; // no, so prime
+    }
+
+    public static String toBinaryStr (int n) {
+        StringBuilder path = new StringBuilder();
+        while(n >= 1) {
+            path.append(n % 2);
+            n >>= 1;
+        }
+        return path.reverse().toString();
+    }
+
+    public static int[] toBinaryArr (int n) {
+        int pos = Hash.bitCount(n);
+        int[] arr = new int[pos];
+        while(n >= 1) {
+            arr[--pos] = n % 2;
+            n >>= 1;
+        }
+
+        return arr;
     }
 }

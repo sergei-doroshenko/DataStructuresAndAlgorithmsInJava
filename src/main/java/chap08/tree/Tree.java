@@ -7,12 +7,15 @@ import java.util.Stack;
  */
 public class Tree {
     private Node root;             // first node of tree
-
+    private int size;
     // -------------------------------------------------------------
+    // no nodes in tree yet
     public Tree() {                   // constructor
-        root = null;                 // no nodes in tree yet
+        root = null;
     }
     // -------------------------------------------------------------
+    public int size() { return size; }
+
     public Node find(int key) {     // find node with given key (assumes non-empty tree)
         Node current = root;               // start at root
         while(current.iData != key) {       // while no match,
@@ -31,6 +34,7 @@ public class Tree {
     // -------------------------------------------------------------
     public void insert(int id, double dd) {
         Node newNode = new Node();    // make new node
+        size++;
         newNode.iData = id;           // insert data
         newNode.dData = dd;
         if(root==null) {              // no node in root
@@ -72,6 +76,7 @@ public class Tree {
                 isLeftChild = false;
                 current = current.rightChild;
             }
+
             if(current == null) {            // end of the line,
                 return false;                // didn't find it
             }
@@ -123,6 +128,7 @@ public class Tree {
             successor.leftChild = current.leftChild;
         }  // end else two children
         // (successor cannot have a left child)
+        size--;
         return true;                                // success
     }  // end delete()
     // -------------------------------------------------------------
@@ -144,6 +150,19 @@ public class Tree {
         }
         return successor;
     }
+
+    public int max() {
+        Node current = root;
+        while (current.rightChild != null) current = current.rightChild;
+        return current.iData;
+    }
+
+    public int removeMax() {
+        int max = max();
+        delete(max);
+        return max;
+    }
+
     // -------------------------------------------------------------
     public void traverse(int traverseType) {
         switch(traverseType) {

@@ -5,14 +5,17 @@ import java.util.Stack;
 /**
  * Created by Sergei Doroshenko on 30.01.2015.
  */
-public class TreeG<T extends Comparable<T>> {
+public class BinaryTree<T extends Comparable<T>> {
     private Node root;             // first node of tree
-
+    private int size;
     // -------------------------------------------------------------
-    public TreeG() {                   // constructor
-        root = null;                 // no nodes in tree yet
+    // no nodes in tree yet
+    public BinaryTree() {                   // constructor
+        root = null;
     }
     // -------------------------------------------------------------
+    public int size() { return size; }
+
     public T find(T key) {     // find node with given key (assumes non-empty tree)
         Node current = root;               // start at root
         while(!current.data.equals(key)) {       // while no match,
@@ -32,7 +35,7 @@ public class TreeG<T extends Comparable<T>> {
     public void insert(T key) {
         Node newNode = new Node();    // make new node
         newNode.data = key;           // insert data
-
+        size++;
         if(root == null) {              // no node in root
             root = newNode;
         } else {                      // root occupied
@@ -123,6 +126,7 @@ public class TreeG<T extends Comparable<T>> {
             successor.leftChild = current.leftChild;
         }  // end else two children
         // (successor cannot have a left child)
+        size--;
         return true;                                // success
     }  // end delete()
     // -------------------------------------------------------------
@@ -143,6 +147,18 @@ public class TreeG<T extends Comparable<T>> {
             successor.rightChild = delNode.rightChild;
         }
         return successor;
+    }
+
+    public T max() {
+        Node current = root;
+        while (current.rightChild != null) current = current.rightChild;
+        return current.data;
+    }
+
+    public T removeMax() {
+        T max = max();
+        delete(max);
+        return max;
     }
     // -------------------------------------------------------------
     public void traverse(int traverseType) {
