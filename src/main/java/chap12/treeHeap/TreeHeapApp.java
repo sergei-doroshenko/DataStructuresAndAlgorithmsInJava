@@ -1,6 +1,5 @@
 package chap12.treeHeap;
 
-import chap08.tree.BinaryTree;
 import libs.AppUtils;
 
 import java.io.IOException;
@@ -20,10 +19,10 @@ public class TreeHeapApp {
         theHeap.insert(37);
         theHeap.insert(43);
         theHeap.insert(30);
-        theHeap.insert(33);
-        theHeap.insert(87);
-        theHeap.insert(93);
-        theHeap.insert(97);
+        theHeap.toss(33);
+        theHeap.toss(87);
+        theHeap.toss(93);
+        theHeap.toss(97);
 
         int value, value2;
         boolean success;

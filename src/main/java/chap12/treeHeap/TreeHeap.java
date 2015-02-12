@@ -67,6 +67,7 @@ public class TreeHeap<T extends Comparable<T>> {
         return true;
     }  // end insert()
 
+    /* Insert item without reordering */
     public boolean toss(T key) {
         Node newNode = new Node();    // make new node
         newNode.data = key;           // insert data
@@ -128,32 +129,36 @@ public class TreeHeap<T extends Comparable<T>> {
     public void trickleDown(Node current) {
 
         Node largerChild;
-        //T top = heapArray[index];         // save root
-        while(current.leftChild != null && current.rightChild != null) {    // while node has at least one child,
+
+        while(current.leftChild != null || current.rightChild != null) {    // while node has at least one child,
 
             Node leftChild = current.leftChild;
             Node rightChild = current.rightChild;
 
             // find larger child
-
-            if(rightChild != null &&  // (rightChild exists?)
-                    leftChild.data.compareTo(rightChild.data)  < 0) { // leftChild < rightChild
+            if (leftChild == null) { // (rightChild exists?)
                 largerChild = rightChild;
-            } else {
+            } else if (rightChild == null) {
                 largerChild = leftChild;
+            } else {
+                if(leftChild.data.compareTo(rightChild.data)  < 0) { // leftChild < rightChild
+                    largerChild = rightChild;
+                } else {
+                    largerChild = leftChild;
+                }
             }
 
             // top >= largerChild?
-            if( current.data.compareTo(largerChild.data) >= 0 ) // top.getKey().compareTo(heapArray[largerChild].getKey())
+            if( current.data.compareTo(largerChild.data) >= 0 ) // current >= largeChild
                 break;
-            // shift child up
+            /******* shift child up **********/
             T temp = current.data;
             current.data = largerChild.data;
             largerChild.data = temp;
 
             current = largerChild;            // go down
         }  // end while
-        //heapArray[index] = top;            // root to index
+
     }  // end trickleDown()
 
     public boolean change(int index, T newValue) {
