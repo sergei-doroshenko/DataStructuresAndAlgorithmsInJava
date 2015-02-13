@@ -1,21 +1,15 @@
 package chap13.graph;
 
 import chap04.Queue.QueueO;
-import chap04.Queue.QueueX;
 import chap04.Stack.StackO;
-import chap04.Stack.StackXInt;
+import sun.security.provider.certpath.Vertex;
 
 /**
- * Created by Sergei Doroshenko on 12.02.2015.
+ * Created by Sergei Doroshenko on 13.02.2015.
  */
-public class Graph {
-    private final int MAX_VERTS = 20;
-    private Vertex vertexList[]; // list of vertices
-    private int adjMat[][];      // adjacency matrix
-    private int nVerts;          // current number of vertices
+public class GraphN extends AbstractGraph {
 
-    // ------------------------------------------------------------
-    public Graph() {
+    public GraphN() {
         vertexList = new Vertex[MAX_VERTS];
         // adjacency matrix
         adjMat = new int[MAX_VERTS][MAX_VERTS];
@@ -27,37 +21,10 @@ public class Graph {
             }
         }
     }  // end constructor
-    // ------------------------------------------------------------
-    public void addVertex(char lab) {
-        vertexList[nVerts++] = new Vertex(lab);
-    }
-    // ------------------------------------------------------------
-    public void addEdge(int start, int end) {
-        adjMat[start][end] = 1;
-        adjMat[end][start] = 1;
-    }
-    // ------------------------------------------------------------
-    public void displayVertex(int v) {
-        System.out.print(vertexList[v].label);
-    }
-    // ------------------------------------------------------------
-    // returns an unvisited vertex adj to v
-    private int getAdjUnvisitedVertex(int v) {
-        for(int j = 0; j < nVerts; j++)
-            if(adjMat[v][j]==1 && vertexList[j].wasVisited==false)
-                return j;
-        return -1;
-    }  // end getAdjUnvisitedVertex()
-
-    private void resetFlags() {
-        for(int j=0; j<nVerts; j++) {         // reset flags
-            vertexList[j].wasVisited = false;
-        }
-    }
 
     public void dfs() { // depth-first search
         StackO<Integer> theStack = new StackO<>(MAX_VERTS);
-                                          // begin at vertex 0
+        // begin at vertex 0
         vertexList[0].wasVisited = true;  // mark it
         displayVertex(0);                 // display it
         theStack.push(0);                 // push it
@@ -79,7 +46,7 @@ public class Graph {
         resetFlags();
     }  // end dfs
 
-    public void mst() { // minimum spanning tree (depth first)
+    public void mst1() { // minimum spanning tree (depth first)
         StackO<Integer> theStack = new StackO<>(MAX_VERTS);
         // start at 0
         vertexList[0].wasVisited = true;   // mark it
@@ -110,7 +77,7 @@ public class Graph {
     public void bfs() {                  // breadth-first search
 
         QueueO<Integer> theQueue = new QueueO<>(MAX_VERTS);
-                                         // begin at vertex 0
+        // begin at vertex 0
         vertexList[0].wasVisited = true; // mark it
         displayVertex(0);                // display it
         theQueue.insert(0);              // insert at tail
@@ -119,8 +86,8 @@ public class Graph {
         while( !theQueue.isEmpty() ) {    // until queue empty,
             int v1 = theQueue.remove();   // remove vertex at head
             // until it has no unvisited neighbors
-            while( (v2=getAdjUnvisitedVertex(v1)) != -1 ) {
-                                                   // get one,
+            while( (v2 = getAdjUnvisitedVertex(v1)) != -1 ) {
+                // get one,
                 vertexList[v2].wasVisited = true;  // mark it
                 displayVertex(v2);                 // display it
                 theQueue.insert(v2);               // insert it
@@ -131,21 +98,30 @@ public class Graph {
         resetFlags();
     }  // end bfs()
 
-    // ------------------------------------------------------------
+    public void mst2() {                  // minimum spanning tree (breadth first)
+        QueueO<Integer> theQueue = new QueueO<>(MAX_VERTS);
 
+        // begin at vertex 0
+        vertexList[0].wasVisited = true; // mark it
 
-    /**
-     * Vertex class
-     * An instance of InnerClass can exist only within an instance of OuterClass
-     * and has direct access to the methods and fields of its enclosing instance.
-     */
-    private class Vertex {
-        char label;        // label (e.g. 'A')
-        boolean wasVisited;
+        theQueue.insert(0);              // insert at tail
+        int v2;
 
-        Vertex(char lab) {
-            label = lab;
-            wasVisited = false;
-        }
-    }
+        while( !theQueue.isEmpty() ) {    // until queue empty,
+            int v1 = theQueue.remove();   // remove vertex at head
+            // until it has no unvisited neighbors
+            while( (v2 = getAdjUnvisitedVertex(v1)) != -1 ) {
+                // get one,
+                vertexList[v2].wasVisited = true;  // mark it
+                displayVertex(v1);                  // display currentV
+                displayVertex(v2);                 // display v
+                theQueue.insert(v2);               // insert it
+                System.out.print(" ");
+            }   // end while
+        }  // end while(queue not empty)
+
+        // queue is empty, so we're done
+        resetFlags();
+    }  // end mts2()
+
 }

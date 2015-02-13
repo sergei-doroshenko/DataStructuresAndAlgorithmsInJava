@@ -1,13 +1,13 @@
-package chap13.dfs;
+package chap13.programmingProjects;
 
 import chap13.graph.GraphN;
 
 /**
- * Created by Sergei Doroshenko on 12.02.2015.
+ * Created by Sergei Doroshenko on 13.02.2015.
  */
-public class DFSApp {
+public class GraphLLApp {
     public static void main(String[] args) {
-        GraphN theGraph = new GraphN();
+        GraphLL theGraph = new GraphLL();
         theGraph.addVertex('A');    // 0  (start for dfs)
         theGraph.addVertex('B');    // 1
         theGraph.addVertex('C');    // 2
