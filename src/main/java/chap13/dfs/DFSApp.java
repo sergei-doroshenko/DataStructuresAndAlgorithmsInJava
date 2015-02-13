@@ -19,7 +19,7 @@ public class DFSApp {
         theGraph.addEdge(1, 2);     // BC
         theGraph.addEdge(0, 3);     // AD
         theGraph.addEdge(0, 4);     //AE
-        theGraph.addEdge(4, 5);     // EF
+        theGraph.addEdge(4, 5);     // EF+
 
         System.out.print("Visits: ");
         theGraph.dfs();             // depth-first search
