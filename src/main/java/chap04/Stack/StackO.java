@@ -1,9 +1,11 @@
 package chap04.Stack;
 
+import java.util.Iterator;
+
 /**
  * Created by Sergei Doroshenko on 19.01.2015.
  */
-public class StackO<T> {
+public class StackO<T> implements Iterable<T> {
     private int maxSize;        // size of stack array
     private T[] stackArray;
     private int top;            // top of stack
@@ -49,5 +51,27 @@ public class StackO<T> {
             System.out.print(' ');
         }
         System.out.println("");
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new Iterator<T>() {
+            int ind = top;
+
+            @Override
+            public boolean hasNext() {
+                return ind != -1;
+            }
+
+            @Override
+            public T next() {
+                return stackArray[ind--];
+            }
+
+            @Override
+            public void remove() {
+
+            }
+        };
     }
 }

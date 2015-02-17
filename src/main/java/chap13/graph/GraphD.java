@@ -1,7 +1,10 @@
 package chap13.graph;
 
+import chap04.Stack.StackO;
+
 /**
  * Created by Sergei Doroshenko on 13.02.2015.
+ * Directed graph implementation
  */
 public class GraphD extends AbstractGraph {
 
@@ -18,10 +21,28 @@ public class GraphD extends AbstractGraph {
         }
     }  // end constructor
 
+    public GraphD(int maxVerts) {
+        vertexList = new Vertex[maxVerts];
+        // adjacency matrix
+        adjMat = new int[maxVerts][maxVerts];
+        nVerts = 0;
+
+        for(int y = 0; y < maxVerts; y++) {     // set adjacency
+            for (int x = 0; x < maxVerts; x++) {   //    matrix to 0
+                adjMat[x][y] = 0;
+            }
+        }
+    }  // end constructor
+
     @Override
     public void addEdge(int start, int end) {
         adjMat[start][end] = 1;
     }
+
+    public void addVertex(int lab) {
+        vertexList[nVerts++] = new Vertex(lab);
+    }
+
 
     public void topo() { // toplogical sort
         char sortedArray[] = new char[MAX_VERTS];  // sorted vert labels
@@ -86,5 +107,50 @@ public class GraphD extends AbstractGraph {
         for(int row=0; row<length; row++) {
             adjMat[row][col] = adjMat[row][col + 1];
         }
+    }
+
+    public void displayConnectivityTable() {
+        StackO<Integer> theStack = new StackO<>(MAX_VERTS);
+        // begin at vertex 0
+
+        for (int i = 0; i < nVerts; i++) {
+            vertexList[i].wasVisited = true;  // mark it
+            displayVertex(i);                 // display it
+            theStack.push(i);                 // push it
+
+            while( !theStack.isEmpty() ) {    // until stack empty,
+
+                // get an unvisited vertex adjacent to stack top
+                int v = getAdjUnvisitedVertex( theStack.peek() );
+                if(v == -1) {                    // if no such vertex,
+                    theStack.pop();
+                } else {                              // if it exists,
+                    vertexList[v].wasVisited = true;  // mark it
+                    displayVertex(v);                 // display it
+                    theStack.push(v);                 // push it
+                }
+            }  // end while
+            System.out.println();
+            // stack is empty, so we're done
+            resetFlags();
+        }
+    }
+
+    /**
+     * Warshall’s Algorithm implementation
+     */
+    public void createTransitiveClosure() {
+        for (int y = 0; y < nVerts; y++) {         // loop through each row 'y' became A, B, C ... etc.
+            for (int x = 0; x < nVerts; x++) {     // than loop through each cell in the row
+                if (adjMat[x][y] == 1) {           // find edge?
+                    for (int z = 0; z < nVerts; z++) { // check appropriate column for edges ended at vertex 'y'
+                        if (adjMat[y][z] == 1 && adjMat[x][z] != 1) { // find edge? adjMat[x][z] - new vertex
+                            addEdge(x, z);                            // create new vertex
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }

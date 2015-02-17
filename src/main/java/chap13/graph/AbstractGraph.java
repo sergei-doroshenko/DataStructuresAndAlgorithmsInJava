@@ -7,7 +7,7 @@ import chap04.Stack.StackO;
  * Created by Sergei Doroshenko on 13.02.2015.
  */
 public abstract class AbstractGraph {
-    protected final int MAX_VERTS = 20;
+    protected int MAX_VERTS = 20;
     protected Vertex[] vertexList; // list of vertices
     protected int[][] adjMat;      // adjacency matrix
     protected int nVerts;          // current number of vertices
@@ -66,9 +66,16 @@ public abstract class AbstractGraph {
     }
 
     public void displayAdjacencyMatrix(){
+        System.out.print(" | ");
+        for (int i = 0; i < nVerts; i++) {
+            System.out.printf(" %2s ", vertexList[i].getLabel());
+        }
+        System.out.println("");
+
         for(int y = 0; y < nVerts; y++) {     // set adjacency
+            System.out.print(vertexList[y].getLabel() + "| ");
             for (int x = 0; x < nVerts; x++) {   //    matrix to 0
-                System.out.print(adjMat[x][y] + " ");
+                System.out.printf(" %2d ", adjMat[y][x]);
             }
             System.out.println();
         }
@@ -79,8 +86,9 @@ public abstract class AbstractGraph {
      * An instance of InnerClass can exist only within an instance of OuterClass
      * and has direct access to the methods and fields of its enclosing instance.
      */
-    protected class Vertex {
+    public class Vertex {
         char label;        // label (e.g. 'A')
+        int lab;
         boolean wasVisited;
 
         Vertex(char lab) {
@@ -88,12 +96,23 @@ public abstract class AbstractGraph {
             wasVisited = false;
         }
 
+        Vertex (int lab) {
+            this.lab = lab;
+            this.wasVisited = false;
+        }
+
         public char getLabel() {
             return label;
         }
 
+        public int getLab() { return lab; }
+
         public boolean wasVisited() {
             return wasVisited;
+        }
+
+        public void setVisited(boolean wasVisited) {
+            this.wasVisited = wasVisited;
         }
     }
 }

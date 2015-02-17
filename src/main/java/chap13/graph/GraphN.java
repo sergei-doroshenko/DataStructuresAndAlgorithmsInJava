@@ -2,20 +2,24 @@ package chap13.graph;
 
 import chap04.Queue.QueueO;
 import chap04.Stack.StackO;
+import libs.AppUtils;
 import sun.security.provider.certpath.Vertex;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Created by Sergei Doroshenko on 13.02.2015.
  */
 public class GraphN extends AbstractGraph {
-
+    private int kn = 1;
     public GraphN() {
         vertexList = new Vertex[MAX_VERTS];
         // adjacency matrix
         adjMat = new int[MAX_VERTS][MAX_VERTS];
         nVerts = 0;
 
-        for(int y=0; y<MAX_VERTS; y++) {     // set adjacency
+        for(int y = 0; y < MAX_VERTS; y++) {     // set adjacency
             for (int x = 0; x < MAX_VERTS; x++) {   //    matrix to 0
                 adjMat[x][y] = 0;
             }
@@ -124,4 +128,93 @@ public class GraphN extends AbstractGraph {
         resetFlags();
     }  // end mts2()
 
+    public void chessPuzzle() throws IOException {
+        StackO<Knight> theStack = new StackO<>(25);
+        StackO<Knight> fails = new StackO<>(25);
+        theStack.push(new Knight(2,2, kn));                 // push it
+        adjMat[2][2] = kn++;
+        int retSteps = 0;
+
+        while( theStack.size() < 25 ) {    // until stack empty,
+
+            // get an unvisited vertex adjacent to stack top
+            Knight knight = makeMove(theStack.peek(), fails);
+
+            if(knight == null) {                    // if no such vertex,
+                knight = theStack.pop();
+                retSteps++;
+                adjMat[knight.x][knight.y] = 0;
+                fails.push(knight);
+                kn--;
+            } else {                              // if it exists,
+                theStack.push(knight);                 // push it
+                adjMat[knight.x][knight.y] = kn++;
+                for (int i = retSteps; i > 0; i--) {
+                    theStack.pop();
+                }
+
+            }
+
+            System.out.print("Press any key to continue... ");
+            AppUtils.getChar();
+            displayAdjacencyMatrix();
+        }  // end while
+    }
+
+    public Knight makeMove(Knight base, StackO<Knight> fail) { // position coordinates
+        int[] ktmov1 = { -2, -1, 1, 2, 2, 1, -1, -2 };
+        int[] ktmov2 = { 1, 2, 2, 1, -1, -2, -2, -1 };
+
+
+        int i = base.x;
+        int j = base.y;
+        int b, e;
+
+        for (int a = 0 ; a <= 7 ; a++ ) {
+
+            b = i + ktmov1[a];
+            e = j + ktmov2[a];
+
+            if ( b < 0 || b > 4 || e < 0 || e > 4 )
+                continue;
+
+            if ( adjMat[b][e] > 0 )
+                continue;
+
+            if (fail != null) {
+                boolean isFail = false;
+                if (fail.size() > 0) {
+                    for (Knight k : fail) {
+                        if (k.x == b && k.y == e) {
+                            isFail = true;
+                        }
+                    }
+
+                    if (isFail == true) {
+                        continue;
+                    }
+                }
+            }
+
+
+            i = b; j = e;
+            return new Knight(i, j, ++base.id);
+        }
+
+        return null;
+    }
+
+    class Knight {
+        int x;
+        int y;
+        int id;
+
+        public Knight(int x, int y, int id) {
+            this.x = x;
+            this.y = y;
+            this.id = id;
+        }
+    }
 }
+
+

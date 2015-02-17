@@ -13,18 +13,32 @@ public class TopoApp {
         theGraph.addVertex('C');    // 2
         theGraph.addVertex('D');    // 3
         theGraph.addVertex('E');    // 4
-        theGraph.addVertex('F');    // 5
+       /* theGraph.addVertex('F');    // 5
         theGraph.addVertex('G');    // 6
-        theGraph.addVertex('H');    // 7
+        theGraph.addVertex('H');    // 7*/
 
-        theGraph.addEdge(0, 3);     // AD
+        /*theGraph.addEdge(0, 3);     // AD
         theGraph.addEdge(0, 4);     // AE
         theGraph.addEdge(1, 4);     // BE
         theGraph.addEdge(2, 5);     // CF
         theGraph.addEdge(3, 6);     // DG
         theGraph.addEdge(4, 6);     // EG
         theGraph.addEdge(5, 7);     // FH
-        theGraph.addEdge(6, 7);     // GH
+        theGraph.addEdge(6, 7);     // GH*/
+
+        theGraph.addEdge(0, 2);     // AC
+        theGraph.addEdge(1, 0);     // BA
+        theGraph.addEdge(1, 4);     // BE
+        theGraph.addEdge(4, 2);     // EC
+        theGraph.addEdge(3, 4);     // EC
+
+        theGraph.displayAdjacencyMatrix();
+        System.out.println("------------------------------------------------");
+        theGraph.createTransitiveClosure();
+        theGraph.displayAdjacencyMatrix();
+        System.out.println("------------------------------------------------");
+
+        theGraph.displayConnectivityTable();
 
         theGraph.topo();            // do the sort
 

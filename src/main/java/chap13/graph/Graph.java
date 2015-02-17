@@ -21,7 +21,7 @@ public class Graph {
         adjMat = new int[MAX_VERTS][MAX_VERTS];
         nVerts = 0;
 
-        for(int y=0; y<MAX_VERTS; y++) {     // set adjacency
+        for(int y = 0; y < MAX_VERTS; y++) {     // set adjacency
             for (int x = 0; x < MAX_VERTS; x++) {   //    matrix to 0
                 adjMat[x][y] = 0;
             }
