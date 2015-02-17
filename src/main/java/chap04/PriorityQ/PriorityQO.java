@@ -1,11 +1,12 @@
 package chap04.PriorityQ;
 
 import chap03.ObjectSort.ArrayOG;
+import chap14.mstw.Edge;
 
 import java.util.Comparator;
 
 /**
- * Created by user on 19.01.2015.
+ * Created by Sergei Doroshenko on 19.01.2015.
  */
 public class PriorityQO<T> {
     // array in sorted order, from max at 0 to min at size-1
@@ -27,6 +28,31 @@ public class PriorityQO<T> {
     public T remove() {             // remove minimum item
         return queArray.delete();
     }
+
+    public T removeN (int n) {        // remove item at n
+        return queArray.delete(n);
+    }
+
+    public T peekMin() {         // peek at minimum item
+        return queArray.peekMin();
+    }
+
+    public T peekN(int n) {     // peek at item n
+        return queArray.peekN(n);
+    }
+
+    public int find(int findDex) { // find item with specified destVert value
+
+        for (int j = 0; j < size(); j++) {
+            Object o = queArray.peekN(j);
+            if (o instanceof Edge && ((Edge) o).destVert == findDex ) {
+                return j;
+            }
+        }
+
+        return -1;
+    }
+
 
     public int size() { return queArray.size(); }
 

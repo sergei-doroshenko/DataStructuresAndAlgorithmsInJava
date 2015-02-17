@@ -54,6 +54,22 @@ public class ArrayOG<T> implements Iterable<T> {
         return temp;
     }
 
+    public T delete(int n) {
+        T temp = a[n];
+        for(int j = n; j < a.length - 1; j++) {    // move items down
+            a[j] = a[j + 1];
+        }
+        return temp;
+    }
+
+    public T peekMin() {
+        return a[nElems-1];
+    }
+
+    public T peekN (int n) {
+        return a[n];
+    }
+
     //--------------------------------------------------------------
     public void display() {             // displays array contents
         for(int j  = 0; j < nElems; j++)       // for each element,
