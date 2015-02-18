@@ -59,6 +59,7 @@ public class ArrayOG<T> implements Iterable<T> {
         for(int j = n; j < a.length - 1; j++) {    // move items down
             a[j] = a[j + 1];
         }
+        nElems--;
         return temp;
     }
 

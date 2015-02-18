@@ -8,8 +8,12 @@ public class Vertex {
     public boolean isInTree;
     // -------------------------------------------------------------
     public Vertex(char lab) {  // constructor
-
         label = lab;
         isInTree = false;
+    }
+
+    @Override
+    public String toString() {
+        return label + ", " + isInTree;
     }
 }

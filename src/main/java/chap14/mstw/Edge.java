@@ -13,4 +13,9 @@ public class Edge {
         destVert = dv;
         distance = d;
     }
+
+    @Override
+    public String toString() {
+        return "(" + srcVert + "-" + destVert + "-" + distance + ")";
+    }
 }

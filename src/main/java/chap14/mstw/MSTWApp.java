@@ -27,5 +27,6 @@ public class MSTWApp {
         System.out.print("Minimum spanning tree: ");
         theGraph.mstw();            // minimum spanning tree
         System.out.println();
-    }  // end main()
+    }  // end main() AD AB BE EC CF
+                   //AD AB BE EC CF
 }
