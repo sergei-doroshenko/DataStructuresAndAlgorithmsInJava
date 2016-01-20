@@ -77,7 +77,9 @@ public class HashTable {
         // until empty cell or -1,
         while(hashArray[hashVal] != null && hashArray[hashVal].getKey() != -1)  {
             ++hashVal;                 // go to next cell
-            hashVal %= arraySize;      // wraparound if necessary
+            hashVal %= arraySize;      // wraparound if necessary,
+            // e.g. hashVal = 188, arraySize = 10, we should have hashVal between 0 and 9
+            // so hashVal % arraySize = 188 % 10 = 8
         }
         hashArray[hashVal] = item;    // insert item
         nItems++;
