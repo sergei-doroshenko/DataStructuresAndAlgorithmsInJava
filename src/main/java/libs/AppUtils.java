@@ -136,6 +136,15 @@ public final class AppUtils {
         return path.reverse().toString();
     }
 
+    public static String toFormatBinaryStr(int n, int length) {
+        String result = Integer.toBinaryString(n);
+        for (int i = length; i > result.length(); ) {
+            result = "0" + result;
+        }
+
+        return result;
+    }
+
     public static int[] toBinaryArr (int n) {
         int pos = Hash.bitCount(n);
         int[] arr = new int[pos];
