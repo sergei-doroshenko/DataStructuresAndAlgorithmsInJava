@@ -23,7 +23,7 @@ public class AnagramApp {
     }  // end main()
     //-----------------------------------------------------------
     public static void doAnagram(int newSize) {
-        int limit;
+
         if(newSize == 1)                     // if too small,
             return;                           // go no further
 
