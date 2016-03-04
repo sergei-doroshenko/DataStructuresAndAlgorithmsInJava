@@ -27,11 +27,11 @@ public class Schedule2 {
         }
     }
 
-    public static Node makeTree(List<Node> results, List<Show> shows, int i, Node previous) {
+    public static void makeTree(List<Node> results, List<Show> shows, int i, Node previous) {
 
         if (i == shows.size()) {
             results.add(previous);
-            return previous;
+            return;
         }
 
         Node current = new Node();
@@ -49,8 +49,6 @@ public class Schedule2 {
         }
 
         makeTree(results, shows, i+1, current);
-
-        return previous;
     }
 
     public static List<Show> getBest(List<Node> results) {
@@ -73,7 +71,7 @@ public class Schedule2 {
         root.show = new Show("Root", new Date(0), new Date(0));
 
         List<Node> results = new ArrayList<>();
-        Node result = makeTree(results, showList, 0, root);
+        makeTree(results, showList, 0, root);
 //        printTree(result, "");
 
         List<Show> best = getBest(results);
