@@ -10,7 +10,6 @@ public class Show {
     private String name;
     private Date startTime;
     private Date endTime;
-    private int overlaps;
 
     public Show(String name, Date startTime, Date endTime) {
         this.name = name;
@@ -30,17 +29,9 @@ public class Show {
         return endTime;
     }
 
-    public int getOverlaps() {
-        return overlaps;
-    }
-
-    public void setOverlaps(int overlaps) {
-        this.overlaps = overlaps;
-    }
-
     @Override
     public String toString() {
         SimpleDateFormat sdf = new SimpleDateFormat("H:m");
-        return name + "(" + sdf.format(startTime) + "-" + sdf.format(endTime) + ")" + overlaps;
+        return name + "(" + sdf.format(startTime) + "-" + sdf.format(endTime) + ")";
     }
 }

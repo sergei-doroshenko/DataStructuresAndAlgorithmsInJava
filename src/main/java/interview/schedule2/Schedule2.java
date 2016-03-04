@@ -12,37 +12,56 @@ public class Schedule2 {
         Node parent;
         Show show;
         List<Node> links = new ArrayList<>();
-        boolean visited;
+        int height;
     }
 
-    public static void print(Node root) {
-        for (Node n : root.links) {
-            System.out.print(n.show.getName() + " -> ");
-            print(n);
+    public static void printTree(Node root, String offset) {
+        System.out.println(offset +root.show.getName());
+        offset += "   ";
+
+        if (root.links.size() > 0) {
+            System.out.println(offset +"|");
+            for (Node n : root.links) {
+                printTree(n, offset);
+            }
         }
-        System.out.print("|\n");
     }
 
-    public static Node makeTree(List<Show> shows, int i, Node previous) {
+    public static Node makeTree(List<Node> results, List<Show> shows, int i, Node previous) {
 
         if (i == shows.size()) {
+            results.add(previous);
             return previous;
         }
 
-        Node node = new Node();
-        node.show = shows.get(i);
-        node.parent = previous;
+        Node current = new Node();
+        current.show = shows.get(i);
 
-        if (previous.show.getEndTime().getTime() < shows.get(i).getStartTime().getTime()) {
-            previous.links.add(node);
+        if ( previous.show.getEndTime().before(current.show.getStartTime()) ){
+            previous.links.add(current);
+            current.parent = previous;
+            current.height = current.parent.height+1;
         } else {
-            previous.parent.links.add(node);
-            makeTree(shows, i+1, previous);
+            previous.parent.links.add(current);
+            current.parent = previous.parent;
+            current.height = current.parent.height+1;
+            makeTree(results, shows, i+1, previous);
         }
 
-        makeTree(shows, i+1, node);
+        makeTree(results, shows, i+1, current);
 
         return previous;
+    }
+
+    public static List<Show> getBest(List<Node> results) {
+        Node best = Collections.max(results, (n1, n2) -> n1.height - n2.height);
+        List<Show> result = new ArrayList<>();
+        while (best.parent != null) {
+            result.add(best.show);
+            best = best.parent;
+        }
+
+        return result;
     }
 
     public static List<Show> findOptimalSchedule(Collection<Show> shows) {
@@ -53,9 +72,15 @@ public class Schedule2 {
         Node root = new Node();
         root.show = new Show("Root", new Date(0), new Date(0));
 
-        Node result = makeTree(showList, 0, root);
-        print(result);
-        return new ArrayList(shows);
+        List<Node> results = new ArrayList<>();
+        Node result = makeTree(results, showList, 0, root);
+//        printTree(result, "");
+
+        List<Show> best = getBest(results);
+        Collections.sort(best, (o1, o2) -> o1.getStartTime().compareTo(o2.getStartTime()) );
+
+//        System.out.println(best);
+        return best;
     }
 
     public static void main(String[] args) throws Exception {
