@@ -5,34 +5,29 @@ package interview.permutation;
  */
 public class Permutation {
 
-
-    public void permutation(int len, String str){
-        if (len == str.length()-2) {
-            System.out.println(str);
-        } else {
-            for (int i = 0; i < len; i++) {
-                permutation(len+1, rotate(str, len));
-
+    public void permutation(char[] chars, int offcet){
+        for (int i = 0; i < chars.length-offcet; i++) {
+            if (offcet <= chars.length-2) {
+                permutation(chars, offcet+1);
+            } else {
+                System.out.println(new String(chars));
             }
+
+            rotate(chars, offcet);
         }
     }
 
-    public String rotate(String str, int offset) {
-        char[] chars = str.toCharArray();
+    public void rotate(char[] chars, int offset) {
         char temp = chars[offset];
         for (int i = offset; i < chars.length-1; i++) {
             chars[i] = chars[i+1];
         }
         chars[chars.length-1] = temp;
-        return new String(chars);
     }
 
     public static void main(String[] args) {
-        Permutation permutation = new Permutation();
+        Permutation p = new Permutation();
         String text = "ABCD";
-        for (int i = 0; i< text.length(); i++) {
-            permutation.permutation(0, text);
-            text = permutation.rotate(text,0);
-        }
+        p.permutation(text.toCharArray(), 0);
     }
 }
