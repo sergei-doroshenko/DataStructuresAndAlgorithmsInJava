@@ -52,7 +52,7 @@ public class Schedule2 {
     }
 
     public static List<Show> getBest(List<Node> results) {
-        Node best = Collections.max(results, (n1, n2) -> n1.height - n2.height);
+        Node best = Collections.max(results, Comparator.comparingInt(n -> n.height));
         List<Show> result = new ArrayList<>();
         while (best.parent != null) {
             result.add(best.show);
@@ -72,7 +72,7 @@ public class Schedule2 {
 
         List<Node> results = new ArrayList<>();
         makeTree(results, showList, 0, root);
-//        printTree(result, "");
+//        printTree(root, "                                  ");
 
         List<Show> best = getBest(results);
         Collections.sort(best, (o1, o2) -> o1.getStartTime().compareTo(o2.getStartTime()) );
